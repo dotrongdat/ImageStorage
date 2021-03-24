@@ -1,0 +1,248 @@
+#bar{
+  transform: translateX(-100%);
+  position: fixed;
+  transition: all 1s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+.navBar ul{
+  visibility: hidden;
+  list-style-type: none;
+  top: 3vh;
+  padding: 0;
+  border: 5px solid #FFFAF0;
+  width: 100%;
+  height: 100%;
+  background-color: #f1f1f1;
+  opacity: 0.7;
+  overflow: auto;
+}
+.navBarFixed ul{
+  visibility: visible;
+  list-style-type: none;
+  top: 3vh;
+  margin-top: 2%;
+  padding: 0;
+  position: fixed;
+  border: 5px solid #FFFAF0;
+  width: 30%;
+  height: 100%;
+  background-color: #f1f1f1;
+  opacity: 0.5;
+  overflow: auto;
+}
+#barIcon{
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 5vh;
+  background-color: #B22222;
+  opacity: 0.8;
+}
+#barIcon ul{
+  width: 100%;
+  height: 100%;
+  height: auto;
+}
+#barIcon li {
+  display:inline-block;
+  width:10vw;
+  height: 100%;
+  margin-left:2px;
+
+}
+#buttonCtrl{
+  visibility: hidden;
+  position: fixed;
+}
+#test{
+  position: fixed;
+}
+li i{
+  float: left;
+  top: 0.5vh;
+  font-size: 4vh;
+}
+i:hover{
+  transform: rotate(7deg);
+  
+}
+i{
+  float: left;
+  position: fixed;
+  transition: all 0.3s ease-in-out;
+}
+a{
+  font-weight: bold;
+  font-size: 150%;
+}
+li a {
+  display: block;
+  color: #000000;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin-left: 2%;
+  text-decoration: none;
+  background-color: #f1f1f1;
+}
+h1{
+  padding-left: 1%;
+}
+/* Change the link color on hover */
+
+.image img{
+  float: left;
+  margin-right: 2%;
+  margin-top: 2%;
+  border: 3px solid #FFFAF0;
+  width: 19.5vw;
+  height: 19.5vw;
+}
+
+.image{
+  transform: translate(1.2%);
+  transition: all 1s ease-in-out;
+  display: block;
+  width: 66%;
+  float: right; 
+  margin-top: 4vh;
+}
+.image img:hover{
+  transform: rotate(10deg);
+  transition: all 0.5s ease-in-out;
+}
+.image img:active{
+  transform: rotate(10deg);
+  transition: all 0.5s ease-in-out;
+}
+#image-contain{
+  float: right;
+  width: 100vw;
+  height: 100%;
+}
+#fullsizeIMG>img{
+  display: inline-block;
+  padding-top: 3vh;
+  padding-right: 27.125vw;
+  padding-left: 27.125vw;
+  text-align: center;
+  width: 45.75vw;
+  height: 90vh;
+  float: left;
+}
+#fullsizeIMG{
+  transform: translate(0px);
+  transition: all 1s ease-in-out;
+  width: 2000000vw;
+  height: 100%;
+}
+li #visited:active{
+  color: #ffffff;
+  background: #B22222;
+}
+li #visited:visited{
+  color: #ffffff;
+  background: #B22222;
+}
+li a:hover {
+  background-color: #CD5C5C;
+  color: white;
+}
+body{
+  background-image: linear-gradient(to right,rgba(255, 99, 71, 0.9),rgba(0,0,0,0));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;   
+  overflow-x: hidden;
+}
+@media only screen and (orientation: portrait){
+      
+      #fullsizeIMG>img{
+  display: inline-block;
+  padding-top: 20vh;
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom:0;
+  width: 100vw;
+  height: 60vh;
+  float: left;
+}
+}
+@media only screen and (max-width: 768px){
+   #image-contain{
+   padding-top: 3vh;
+   float: right;
+   width: 142vw;
+   height: 100%;
+}
+   a{
+       font-weight: bold;
+       font-size: 100%;
+}
+.navBar ul{
+  visibility: visible;
+  list-style-type: none;
+  top: 5vh ;
+  margin-top: 2%;
+  margin-left: 1%;
+  padding: 0;
+  position: fixed;
+  border: 5px solid #FFFAF0;
+  width: 100000%
+  height: 100%;
+  background-color: #f1f1f1;
+  opacity: 0.9;
+  overflow: auto;
+}
+#bar{
+  transform: translateX(-150%);
+  position: fixed;
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+.navBarFixed ul{
+  visibility: hidden;
+  list-style-type: none;
+  margin-top: 2%;
+  margin-left: 1%;
+  padding: 0;
+  position: fixed;
+  border: 5px solid #FFFAF0;
+  width: 100000%
+  height: 100%;
+  background-color: #f1f1f1;
+  opacity: 0.7;
+  overflow: auto;
+}
+a{
+  font-weight: bold;
+  font-size: 150%;
+}
+li a {
+  display:inline-block;
+  color: #000000;
+  text-decoration: none;
+  background-color: #f1f1f1;  
+  width: 90%;
+  height: 100%;
+}
+h1{
+  text-align: center;
+  margin-top: 3%;
+}
+li{
+   height: 15%;
+}
+#buttonCtrl{
+  visibility: visible;
+  position: absolute;
+}
+#test{
+  position: static;
+}
+}
+/*html{
+  
+}

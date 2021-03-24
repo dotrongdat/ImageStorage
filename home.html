@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>25-02-2020</title>
+	<link rel="stylesheet" type="text/css" href="css/home.css">
+	<script src="https://kit.fontawesome.com/f237423253.js" crossorigin="anonymous"></script>
+    <script>
+        var setIMGfzNumber=0;
+        var TotalSetIMG=15;
+        var numberSet=1;
+        var menuShow=false;
+
+        function nextIMG(){
+        	setIMGfzNumber+=document.documentElement.clientWidth;
+            document.getElementById('fullsizeIMG').style.transform="translate("+(-setIMGfzNumber)+"px)";           
+        }
+        function prevIMG(){
+            setIMGfzNumber-=document.documentElement.clientWidth;
+        	document.getElementById('fullsizeIMG').style.transform="translate("+(-setIMGfzNumber)+"px)";
+        }
+    	function showImg(img,length,numberSetImg){
+               for (var i = length; i >= 3; i--) {
+               	document.getElementById(img+i).style.display='block';} 
+               	document.getElementById(img+2).style.removeProperty('top');
+               	for (var i =TotalSetIMG; i >= 1; i--) {
+               	     if (i!=numberSetImg) {
+               	     	document.getElementById('setImg'+i).style.opacity='0.0';
+               	     }
+               	     }
+    	}
+    	function hideImg(img,length,numberSetImg){
+    		for (var i = length; i >= 3; i--) {
+    	    document.getElementById(img+i).style.display='none';}
+            document.getElementById(img+2).style.top='0px';
+            for (var i =TotalSetIMG; i >= 1; i--) {
+               	     if (i!=numberSetImg) {
+               	     	document.getElementById('setImg'+i).style.opacity='1.0';
+               	     }
+               	     }
+        }
+        function menuCtrl(){
+        	if(menuShow){
+        	   document.getElementById('bar').style.transform="translate(-"+200+"%)";
+        	   document.getElementById('buttonCtrl').style.transform="rotate(0deg)";
+               menuShow=false;
+        	}else{
+        		document.getElementById('bar').style.transform="translate(0px)";
+        		document.getElementById('buttonCtrl').style.transform="rotate(90deg)";
+        		menuShow=true;
+        	}
+        }
+        function showFSIMG(numberSetImg){
+        	        numberSet=numberSetImg;
+        	        document.getElementById('nextIMG').style.display='';
+        	        document.getElementById('prevIMG').style.display='';
+              		document.getElementById('fullsizeIMG'+numberSetImg).style.display='';
+              		document.getElementById('image-contain').style.display='none';
+              		document.getElementById('barFixed').style.display='none';
+              		document.getElementById('closeIMG').style.display='';
+              		document.getElementById('nextbutton').style.display='';
+              		document.getElementById('prevbutton').style.display='';
+        }
+        function closeFSIMG(){
+        	   document.getElementById('nextIMG').style.display='none';
+        	   document.getElementById('prevIMG').style.display='none';
+               document.getElementById('fullsizeIMG'+numberSet).style.display='none';
+               document.getElementById('image-contain').style.display='';
+               document.getElementById('barFixed').style.display='';
+               document.getElementById('closeIMG').style.display='none';
+               document.getElementById('nextbutton').style.display='none';
+               document.getElementById('prevbutton').style.display='none';
+               document.getElementById('fullsizeIMG').style.transform="translate(0px)"; 
+               setIMGfzNumber=0;
+        }
+        function rotate(id){
+        	document.getElementById(id).style.transform="rotate(-20deg)";
+        }
+        function unRotate(id){
+        	document.getElementById(id).style.transform="rotate(0deg)";
+        }
+        function FB(){
+        	window.location.href = 'https://www.facebook.com/timberlakedat.do';
+        }
+        function gmail(){
+        	alert("DatDTSE140920@fpt.edu.vn");
+        }
+        function phoneNumber(){
+        	alert("0377322919");
+        }
+    </script>
+</head>
+<body>
+	
+     <div id="image-contain">
+		<div class="image" onmouseover=showImg('1.',15,1) onmouseout=hideImg('1.',15,1)>
+		    <div id="setImg1">
+		        <div id="main">
+		      <img id="1.1"  src="https://lh3.googleusercontent.com/dA35Xw_SiHiKh0ac-Xt2--s6CTE397xsTt_oeg0LvAoFuNwxaPDXzKeyUsT1EkhV8E2gCkEWhT_GEayjseCaDtfFfu-JvQebvzetO8lhbOPkgxtgHilk_BxQ83IBlKKf39J9_kLYXQ=w1920-h1080" alt="img1.1" style="position: relative;">
+		        </div>
+			  <a href="#1.2fz" onclick=showFSIMG(1)><img id="1.2" src="https://lh3.googleusercontent.com/kqmh7WJH1ABCzm1-xD23wcO29gEQuvkbL2c2vdR1Cnpo_CrgtpLTWSJZE1UKakmMZZKt8wHLVNzpIkmZH0O7Nnt4fgpdVgDsCySwx6lGAzOU9X_dQ-SBps8rsuSmEFV_HS4PPIRuag=w1920-h1080" alt="img1.2" style="position: absolute; top: 0px; display: block"></a>
+			  <a href="#1.3fz"onclick=showFSIMG(1)><img id="1.3" src="https://lh3.googleusercontent.com/3xuzMANF6N8ziYHT-3r1Elm-ZEr77roKRp53eYWD42Ea2S90e09tjG6cAVRsYe8pnVYEq_OrhMbmD3K6bq2KqP9-CkI_dlfbITcdr7ne3hmDxbR865hyZ6TASdui1pwBGgOA4neQRg=w1920-h1080" style="display: none;"></a>
+			  <a href="#1.4fz" onclick=showFSIMG(1)><img id="1.4" src="https://lh3.googleusercontent.com/W3pJAfribTWk01Vfd8O3TWqyTQcpIGhnvzHahb2MwE0SJkEKo2cQCInbrG2Nw1fUQOBXQGAxUyuCNrwGhxjM7wr2qE7WGnD42CcShowCNXhzm2le_OsXo1J_EaRaSmCV-FCqnM5K4g=w1920-h1080" alt="img1.4" style="display: none;"></a>
+			  <a href="#1.5fz" onclick=showFSIMG(1)><img id="1.5"  src="https://lh3.googleusercontent.com/itrokcQMD_iE6UVntN8JsaWy0CwrrAgSAAKDWFb8T-rhIj2Srem-ufW8xgollXYvXVWWmD8nU0S3ZDYSmVlsa-fuUqzkJDnjUq0R4IW5NLuQnKIB5g_b-yH1P-Lx3dfheQu1Z0P9wQ=w1920-h1080" alt="img1.1" style="display: none;"></a>
+			  <a href="#1.6fz" onclick=showFSIMG(1)><img id="1.6"  src="https://lh3.googleusercontent.com/MhBivPZ4w2d39vDf7KGiRVHcHUSW8w57OumtF59YyLm-rrNqJCF6qI6d3QfEYRrZoNvfBWpgYPQ9Q6QcZAW_lqVkK7EFPCjqpGzu_IxFOfDjgI4cpZAbaug-cykbyfkmTL-w5GE6_A=w1920-h1080" alt="img1.6" style="display: none;"></a>
+			  <a href="#1.7fz" onclick=showFSIMG(1)><img id="1.7"  src="https://lh3.googleusercontent.com/9nAWY9RQdv946HOJsEkmRedNOSZrAOiBuDZttNJPHGtK5gvSPlL3-vrZxMLYpYWtTit1w7O2Nfi8QOvLhiOombTW1v25F8cPtKMexS6k1j-e_S-YtAIganFzQbqXaEt8g5Gdd7SfwQ=w1920-h1080" alt="img1.7" style="display: none;"></a>
+			  <a href="#1.8fz" onclick=showFSIMG(1)><img id="1.8"  src="https://lh3.googleusercontent.com/s6zMu0sdUTO95b3Kdsq8QJ7vaD0gU48mz4O6dL6qUEjf3LRn11Oag1Z2t-bLJYn6k275bLVSxNYiVhzJzsa4QRznkK699MYGQKNWm-CMVIe10IalJV_OgwJistZfEjeuaGWfDumiXA=w1920-h1080" alt="img1.8" style="display: none;"></a>
+			  <a href="#1.9fz" onclick=showFSIMG(1)><img id="1.9"  src="https://lh3.googleusercontent.com/DqndBU87hODQnYUG4gR2R50s9Pqape28npUXpas3erMbkctS6_zy-3STzPbCM9ulGJIj-sk-siKVMBDr4wBYb0O-KELQQwuYgD74SvF0iEnA2koIK0uA-wqlIFE4bgXcPR6jzP9Gfg=w1920-h1080" alt="img1.5" style="display: none;"></a>
+			  <a href="#1.10fz" onclick=showFSIMG(1)><img id="1.10"  src="https://lh3.googleusercontent.com/R2fE17lRGjlRepON7VeV9TJKxBkyTp-_rLzKYCm3j4Cnhzfu4-kZRmaIubYB_uxTYOvAMbxI6q0V72ofbIjwOsJVGy5MvNE9qZb-9jOm1vUwBRkIIYniPYH0Ls6mQtg_6PVK9xGXbg=w1920-h1080" alt="img1.5" style="display: none;"></a>
+			  <a href="#1.11fz" onclick=showFSIMG(1)><img id="1.11"  src="https://lh3.googleusercontent.com/cp_o2XDAcEr23clj9nxuJDu5kAxmlFGODgiYA6GJI92u1hn9ACqywSYnM6gp8HFoUSzzacsstONoXpekRHcJxZbjzMDZvzx6HUM9976ULq353s873RB2C8OllT6Aplstg-s0Nyr67Q=w1920-h1080" alt="img1.5" style="display: none;"></a>
+			  <a href="#1.12fz" onclick=showFSIMG(1)><img id="1.12"  src="https://lh3.googleusercontent.com/dJIyUxrPAEtK0KVE-JGueRUD-jdCzhh0CDySryCD6HGMkw4WooF_frRwV21PrW_wKPwW8ZJyIxENzJvydbxuHWkbuO6bI3VJToNW58h7ogR_Sw22PoxbiwgM0sk1LfGijnIQGpvS6Q=w1920-h1080" alt="img1.5" style="display: none;"></a>
+			  <a href="#1.13fz" onclick=showFSIMG(1)><img id="1.13"  src="https://lh3.googleusercontent.com/Q7I1atly3LONIiwD11qdwgO3f8YOL4T_aJrhgI4EALdvsuN7e9yjSNeCJFEGt4NuWABQYorXozn2cRnpu8DJ_34rSeEngz4JO7DAr3r55HqvdDjMTekZHlyevR_FFG82idDkYJetdQ=w1920-h1080" alt="img1.5" style="display: none;"></a>
+			  <a href="#1.14fz" onclick=showFSIMG(1)><img id="1.14"  src="https://lh3.googleusercontent.com/At5lktCUBZ0cuekNy1EBUeREycUodczipTqMM0nd2aIOv2Ddxj3GNvxnZeC5uPNrasYDT3rxxsNr3r8PCBEDya0RjG_vN3qoQw_tUV1NaOwNJIOhJQNAtGEa-mt4W2vGVd1hhF5Z-w=w1920-h1080" alt="img1.5" style="display: none;"></a>
+			  <a href="#1.15fz" onclick=showFSIMG(1)><img id="1.15"  src="https://lh3.googleusercontent.com/fN80vJkSD4qubO0rcCYws5Q3ua9GEF_rr51H0-0gNowOOqWnW6pr7RZnyWRsdULJ5eMmmTacSf1LlTOkLKyilyfiqyO5QuFDpMB2BL-4IgWjikgCNDZN30icbcyH5pMUEcy1ysJuOA=w1920-h1080" alt="img1.5" style="display: none;"></a>
+		    </div>
+		</div>
+		<div class="image" onmouseover=showImg('2.',7,2) onmouseout=hideImg('2.',7,2)>
+			<div id="setImg2">
+			     <div id="main">
+			  <img id="2.1"src="https://lh3.googleusercontent.com/8WQebrSRBTM7ekrEUHmLziBvVcjaORfrR6eGwgh3Ggg9P1bYHwvirJEpvmo_yIHw2LfaqiVf-Rt5okFW2A_HCOPzAv9BAc8ptDHyc8hIKlEnXZ0rZNDqgv-mYyYfophBh_QSVUbX6w=w1920-h1080" alt="img2.1" style="position: relative;">
+			     </div>
+			 <a href="#2.2fz" onclick=showFSIMG(2)><img id="2.2" src="https://lh3.googleusercontent.com/UXu8Eb1IG79tDeYhDhnL69RKI9m-adhHkTjUd3DQ0wycduBDHr-GPXnYiCslnH14XjFhBcWNgkq4Z7FT4wkdYQNnHHHMQ7osPphV19Q2_-srSF6cHtsYPN1IzxkECVDcAFyL6ErooA=w1920-h1080" alt="img2.2" style="position: absolute; top: 0px; display: block"></a>
+			 <a href="#2.3fz" onclick=showFSIMG(2)><img id="2.3" src="https://lh3.googleusercontent.com/99A6D5gIJTtrdk0hvGPd32E0Yp9fCdAhF30b34pjSZcfi-ORHgYFdJ6gNl6ZrjXGEUo6uaR7w6e3xjNqRZCTZ6gLPl8qpwY4RZO6v0n54DwwzFiN9ZqrCC6Y_qJySEfPS30P1kI1Pg=w1920-h1080" alt="img2.3" style="display: none;"></a>
+			 <a href="#2.4fz" onclick=showFSIMG(2)><img id="2.4" src="https://lh3.googleusercontent.com/32U3PIoMeYIagaMHQeCwRYuAa6YR8733Mkrp8lQHArkyW_4fiwxa1Kv17wYeyb0kJHsXJdoL7z8yfW0RZcl_1b05HXLc9_9KtDcsUvROqTZ81pX-P9bgWH-4dtLxbaMueVB9H7yHZg=w1920-h1080" alt="img2.4" style="display: none;"></a>
+			 <a href="#2.5fz" onclick=showFSIMG(2)><img id="2.5" src="https://lh3.googleusercontent.com/TkqefFuo3qimyFDHg9hTbF5Jv4Wwmtan7rYebw8ZDXb6qsxX5YBYhFZBnRUYAK_c8bN-VQGfoM88xmVtOgf7WrE0ud_P4oxleTtcHWRZRvQxFhBaNedHbOLpH3XnMH00wJ5eztbLwg=w1920-h1080" alt="img2.5" style="display: none;"></a>
+			 <a href="#2.6fz" onclick=showFSIMG(2)> <img id="2.6" src="https://lh3.googleusercontent.com/j7eN0wo648c-xS9S9F5sGi7QQ0lFJvtFxnUD9v3UVvzW3FoctBny0aJTZfes2LH8tgi8WIxNbwZCWir2jBd41ruICpNnll3bAcqhbbVR1orCyUHAFiiBQ5d7YBY_JhpCMRIQUSK6zQ=w1920-h1080" alt="img2.1" style="display: none;"></a>
+			 <a href="#2.7fz" onclick=showFSIMG(2)> <img id="2.7" src="https://lh3.googleusercontent.com/r1W9-cO9IcJgGoS-ku6xN1uvMm5wgqgSNX_gsHmT8pVyVbbP_weFCrafXEkmiK6JF8_A5FYwivyXXw6mxFgwnM8799Ay80XtKKDGlIonYdy_YbLqA5psNt98W84yYHVxpdDe7dQHdg=w1920-h1080" alt="img2.1" style="display: none;"></a>
+			</div>
+			
+		</div>
+		<div class="image" onmouseover=showImg('3.',4,3) onmouseout=hideImg('3.',4,3)>
+			<div id="setImg3">
+			     <div id="main">
+			   <img id="3.1"src="https://lh3.googleusercontent.com/jgqLxu0x2T50PL3aR82BODeLDoJ0-JIMdysLQI1pK7s3rHgBLmjUrT1H1-cR_y2uEcp2MEiwGi2mXI9kqXIFknJYyuEZMBx3Fj3bdZ1HLpVu4_QTr7pt4hB8GRSO2yKT8ag79WAzcg=w1920-h1080" alt="img3.1" style="position: relative;">
+			     </div>
+			 <a href="#3.2fz" onclick=showFSIMG(3)><img id="3.2" src="https://lh3.googleusercontent.com/MYgv5Fq4UNg67UpvqNKEntIyNQDAriKQtrWINYnOJPN7KZsEUQDvs0jm6yBrikUASOrfyozzF81vGCbQlC5u7QD0gMrXdUSldgkKmlrvHZ-9YKfH_PX4QumRXh-EdJir1IPSpp41lQ=w1920-h1080" alt="img3.2" style="position: absolute; top: 0px; display: block"></a>
+			 <a href="#3.3fz" onclick=showFSIMG(3)><img id="3.3" src="https://lh3.googleusercontent.com/AeAAhltC8Svop3UfC4rMWKCRsAnrTOcHzfrwhdqbrw8OY15dYnS2tBFtYM_b420dwOd5a2RSubNvT9hUUmDIuNCyPA517H0zOSWQoGvpcbdpGxNNG55SjSRAzPFBIsDh7f_lTHhGOw=w1920-h1080" alt="img3.3" style="display: none;"></a>
+			  <a href="#3.4fz" onclick=showFSIMG(3)> <img id="3.4" src="https://lh3.googleusercontent.com/TIesdLExLf8aLNp63Ts0wxP20MXUVNxC85YpKPVVQKSbiOpx4831Exelc0b_xgK_wGDQTaOMonVgW8C0jr-JyuOa3OPILuwkpaedk1JkxpFjYtTRKwGS3pKvkT4-E9chITWxx3JhcQ=w1920-h1080" alt="img3.4" style="display: none;"></a>
+		    </div>
+</div>
+
+		<div class="image" onmouseover =showImg('4.',10,4) onmouseout=hideImg('4.',10,4)>
+			<div id="setImg4">
+			      <div id="main">
+			    <img id="4.1"src="https://lh3.googleusercontent.com/ZIiUc4hMt0ljbREXLOVlGuyvW7RwfuG7J5X7kBcc3ibiJ97Tkmj1XFlIPLD5MZoQouoeRSZY0-XWo7KlDv1q8cIvpQTwIViMLasUTCgcH9-ox8Wuf4qtRYCiYjFEoaS5zGjq09SdWg=w1920-h1080" alt="img4.1" style="position: relative;">
+			      </div>
+			   <a href="#4.2fz" onclick=showFSIMG(4)><img id="4.2" src="https://lh3.googleusercontent.com/Itu2EP8syv7uYlDO5VQspIoyv0Z2NyLGyl1oiscW8qDLH6SHuDQNhIvnARwXkA1PxKABwtAj3KGMzugBiV72IULNFb5h1_6yH9Cfd6gItamQKx7rce9Vkr_MpSimNgexq6QWPf_PMA=w1920-h1080" alt="img4.2" style="position: absolute; top: 0px; display: block"></a>
+			   <a href="#4.3fz" onclick=showFSIMG(4)><img id="4.3" src="https://lh3.googleusercontent.com/UFcUkIZbt93GXFruoEOZAUbGGeGaXbnHT-VDLtyNuRS8kyFjSmnDuUPE1tl98DQnTs0kCUXv2vQYi01pfanxORI0KiwRrNeZThToiTSOya_GOqWOI_SZnbQxr_DK2y5KI_Bf5vG96g=w1920-h1080" alt="img4.3" style="display: none;"></a>
+			   <a href="#4.4fz" onclick=showFSIMG(4)><img id="4.4" src="https://lh3.googleusercontent.com/dTRc975bhiYa-vjTXY4lt1k8yLzwUgBwX0r79DyDPdFb58H0dIGl_Nzl5Ev5cUTLdwrPyRLUgP1qpF55eUkjprJueL5O20xXLVkyeHvgiCKayFBSq9Im4aKzX-Bq2Z_iCnYBQ4hPCw=w1920-h1080" alt="img4.4" style="display: none;"></a>
+			   <a href="#4.5fz" onclick=showFSIMG(4)><img id="4.5" src="https://lh3.googleusercontent.com/FypQ1OA3YPYR-8VbFysIRJO1VpQzj-ECFlvCXj_HUZdrJTEl-pY-QWuTlDKpWhHAkcekTn1TykPT74F-uyJvNlXa6tBmAN96MDBMGcl3swtsQmYVJaqC18VaX52EP-taMEtabibI_g=w1920-h1080" alt="img4.1" style="display: none;"></a>
+			   <a href="#4.6fz" onclick=showFSIMG(4)><img id="4.6" src="https://lh3.googleusercontent.com/5zp4uo0OwV48UDmoJaiTQWrvQ7IF--mj6VB41u85tszFPnqo-yEBFazoG1EtQN1-I_S2Mujgxz28lTC96FKovgnSU-QdSfXRxQ8bwDZ-Wa6wj3rg87fN7ZjsYq3lNJQMdwRHOUoa7w=w1920-h1080" alt="img4.1" style="display: none;"></a>
+			   <a href="#4.7fz" onclick=showFSIMG(4)><img id="4.7" src="https://lh3.googleusercontent.com/x1VrHZVUZP0-Y4jr_ns35oMb9crs-UB-TqsjLZCF4bPjt9OE-hQicueqrVGsJ1DaIUvlGIFntKruR8eojfiUEI2FdP4xL_BL6Ur61mpvTaGaxodfQbtDw9eChZ_FPQJ-irxmKA-bow=w1920-h1080" alt="img4.1" style="display: none;"></a>
+			   <a href="#4.8fz" onclick=showFSIMG(4)><img id="4.8" src="https://lh3.googleusercontent.com/ghyg1TXO1L_9tvE7X_RZTeNoQMI3QgH1wBqGhOGE1j8NPG-Pm92dUUAbkNsALZASDZbpDQyqZIfAaSvc6vQrQR_TLMTEX5Vb05jGhMytTZB4oB4CrvnUjeMXf8ykXg8DPrYRaJpZlg=w1920-h1080" alt="img4.1" style="display: none;"></a>
+			   <a href="#4.9fz" onclick=showFSIMG(4)><img id="4.9" src="https://lh3.googleusercontent.com/8AIDWdPw88850kQdPjNl5s02rm1uvVwnCGA7TYpimungvPjQTJcdpXfSYxJ-yfeIo7YddIJ9qLH6Qv4bizSzg8m942jVs-HLXakm-CUSaTq30-2xE8voSXXX3wzgt2NWFSEdlruttg=w1920-h1080" alt="img4.1" style="display: none;"></a>
+			   <a href="#4.10fz" onclick=showFSIMG(4)><img id="4.10" src="https://lh3.googleusercontent.com/Oi-tK11mkR6EnpVaoAlf8Y9X7IKgqgVEDG3Kh9E5FGO105tJ6AROtTLW25LhSH8orEMg06nq0PSIKMaRwlpZTnzIHymqQiM3kEufVBFJnPajPyegembc7UufftkQl66mMM7V2qljnQ=w1920-h1080" alt="img4.1" style="display: none;"></a>
+		    </div>
+		</div>
+		<div class="image" onmouseover=showImg('5.',10,5) onmouseout=hideImg('5.',10,5)>
+			<div id="setImg5">
+			       <div id="main">
+			     <img id="5.1"src="https://lh3.googleusercontent.com/rFzIempjyTVjNtRIr6coFrgJer3HazoqS_CCbI_F8aqMitzMr-e-MBrUcZMwEGm1fuKO6XxIEuw-3yfpl1XBeZNl1Fm9VIoj-sQQxwwNn0z5kCTR_SPYVGDPqHwb5NUOKOVTNW4ytw=w1920-h1080" alt="img5.1" style="position: relative;">
+			       </div>
+			    <a href="#5.2fz"onclick=showFSIMG(5)><img id="5.2" src="https://lh3.googleusercontent.com/cjX9b5KjyD_evyRbtN-rCf4JzzGR9s4SsN3gnloPvFNKvOyiGdzVaGa14vywtTORLrGpQEEe3IbepEt33Me2LIRO4vMSv28sF9Y2KC3btnKpvGY6Xhi9B5EUKODiSBbEtH8hJfN53A=w1920-h1080" alt="img5.1" style="position: absolute; top: 0px; display: block"></a>
+			    <a href="#5.3fz"onclick=showFSIMG(5)><img id="5.3" src="https://lh3.googleusercontent.com/8HVDhPIstY6liOKEINYsnan8Eo8KkjNz7tZxlzNmLsI35Z28wQaHeMFaF4gal5WVJWpi_AfTWQIIwuHfW9inE7GrKG7lzOg2oyfWVYjGVU1V_NxzyR0KWK8vz5maPmTAcXBVU8xpAg=w1920-h1080" alt="img5.1" style="display: none;"></a>
+			    <a href="#5.4fz"onclick=showFSIMG(5)><img id="5.4" src="https://lh3.googleusercontent.com/ZaxUvCXMQXzhP1bxQ6-HvmDhnh2DhHXSAwjUBDgJ7vgBUolpdmCg-NJr58y67sfu3wEUe7dm_4PpPKqFfb3gkmeTmmCGl_dee7KLlsYYzfyYnv_Vka4sGchQY11dC6oAYdG0ZNHW9g=w1920-h1080" alt="img5.1" style="display: none;"></a>
+			    <a href="#5.5fz"onclick=showFSIMG(5)> <img id="5.5" src="https://lh3.googleusercontent.com/sDbEH9ghTHFN09rlsQuhnVB9hEMLez9o7IDNPnOsXMqtFcCQek0yl36Pj8fJTgw6Lh4ysn-TLlgBTrbalzJwhRTmCWeAD3tkxa5QRhVieKO2EsMX_yYP59Fw4ZqiS_tnr8CRkmcUaw=w1920-h1080" alt="img5.1" style="display: none;"></a>
+			    <a href="#5.6fz"onclick=showFSIMG(5)> <img id="5.6" src="https://lh3.googleusercontent.com/erbC5zLRiV4k5zl2EIpZ22kPM2l3Bg_V8oce8ng6ESzwHLtQgA_d9AptUqAI_Xpag40QPSaon2sHyVPR1_A_T4eBezGOSpfy3fsUb9h4aRN1duTJZx42NCs4iXcPqaxNT3pCGO6P4g=w1920-h1080" alt="img5.1" style="display: none;"></a>
+			    <a href="#5.7fz"onclick=showFSIMG(5)> <img id="5.7" src="https://lh3.googleusercontent.com/8ozPy4fXrpRRWhO1Y4fEfmnsHKrsg7lBV9zXv-ViPyaoJnSCMrbLqycncPas_s-x1Wyyyq0I7M_dqZMz5NnmFa3BPAN836Z4QsivfhamynsYNk13rVEsBCzl9zj7RsV_eNvooxZ3pQ=w1920-h1080" alt="img5.1" style="display: none;"></a>
+			    <a href="#5.8fz"onclick=showFSIMG(5)> <img id="5.8" src="https://lh3.googleusercontent.com/zzGaHm44Bm0s6vvTAaaVNQL6L7twER1jw3vRl7vxeunOidUonKPhfhKJlhk6zQ127LxTbEDiY_o1X8Nj8GzBiTyKLiGtpDQLtahyod2Lfdq6bXahkoQynDjexBJAERUAUTb443E__A=w1920-h1080" alt="img5.1" style="display: none;"></a>
+			    <a href="#5.9fz"onclick=showFSIMG(5)> <img id="5.9" src="https://lh3.googleusercontent.com/ZtpYalVvL_YRyKQz6NoBjBV4FpASRH0iiZnSbc5JbVrooiZusl9wACWgrmOjuK3KeTKEYSiqDY132cyM3RA7soffD-tolV3aAQiZXicAJeCGAZaDPnydGPnfWiVLse6fCNDQx8-8bA=w1920-h1080" alt="img5.1" style="display: none;"></a>
+			    <a href="#5.10fz"onclick=showFSIMG(5)> <img id="5.10" src="https://lh3.googleusercontent.com/kbBaDNh6z3CN6D0EbMh7OFn9ySqVt7SlR6xDDt-PQqq2pRXUTOQ0-OnuVGeHkERuyTkhDKIP9VDmp34qYPRyV49v9VMSEhlmMW9Sa-giLs3GD6Sd3yBSr7y_OJMX-pQD6YnS_Ohd9w=w1920-h1080" alt="img5.1" style="display: none;"></a>
+		    </div>
+		</div>
+		<div class="image" onmouseover=showImg('6.',10,6) onmouseout=hideImg('6.',10,6)>
+			<div id="setImg6">
+			        <div id="main">
+			    <img id="6.1"src="https://lh3.googleusercontent.com/Z4z5u81o6SE2zHR1zRE8PSJqtkKJF1nRC5pIttwEzobWDwlaDVXaVIGqnhcie7UbmvXhSKn1DEbeh8KuzFxky5ErT-ILuU1LVtionLf9n42SCntJs1pLsCriL2nfAR5ChjPH4xn9TA=w1920-h1080" alt="img6.1" style="position: relative;">
+			        </div>
+			   <a href="#6.2fz"onclick=showFSIMG(6)> <img id="6.2" src="https://lh3.googleusercontent.com/BpQ_Bws9yeXYQsg-m6ykB7voVSP1BPC-1p0-XUj5RQ-edg9ntBZVobtMgVvKu-F1GxVoB-f6x0EEGEpwOMNCW8nf4o_ZmYi-CYHyX3fX0iBawOuJKcPu47zzU-wz8apb-WHaxGv2vA=w1920-h1080" alt="img6.2" style="position: absolute; top: 0px; display: block"></a>
+			   <a href="#6.3fz"onclick=showFSIMG(6)> <img id="6.3" src="https://lh3.googleusercontent.com/-jBTwGM8vxhgwYn4s2XdvhYNgBDRe6-oYMoYQ47G1ad9N9TORf0VyO8U-ZDFs9oSsTiGPOwfe7sNALdMMgWYxLRn2h-NQFUWF8Vg2DoyKfIN5MztE83oqnSMh6_rOv_1jrt7Ozhwng=w1920-h1080" alt="img6.1" style="display: none;"></a>
+			   <a href="#6.4fz"onclick=showFSIMG(6)> <img id="6.4" src="https://lh3.googleusercontent.com/UHosXAXkPvEv2JOtXNVk4sCYCfKar1JdbK7xbkm9Sx0pgodRMf-GaghAN1DnePdyo_PL8PImggRGWc5YkD0gg7GQ_-fA3aMqg76Fa4zkCOmaFA0hpp3uqS2C7ZkdbkObz_7IFl-mWA=w1920-h1080" alt="img6.1" style="display: none;"></a>
+			   <a href="#6.5fz"onclick=showFSIMG(6)> <img id="6.5" src="https://lh3.googleusercontent.com/qNVPOfUuYflqhT7fX30WNijEsm3sPLlr3yOysQQQsm5IFlIGjm8n9NmsgCzj5xn9bXPfyP-zVIkhHpce-nOCyQ2irQAj7vN_QHCIWL8_Gu-zMtZIMoEvItd9_NNkahklzmlg6PZ0gA=w1920-h1080" alt="img6.1" style="display: none;"></a>
+			   <a href="#6.6fz"onclick=showFSIMG(6)> <img id="6.6" src="https://lh3.googleusercontent.com/cTkLxlJyuMbvGz4aPMn_BgeuRUppxbXTxe5EGrlNqavm8Xwy6gqze9EjNlokvnkglv0lPQPNEOY3AXkBYdNcHVLoiwcsD13-pNPqQFZSvLfoYEdYLfWyvPg0s3IdOsRZMdAyTN7Sxg=w1920-h1080" alt="img6.1" style="display: none;"></a>
+			   <a href="#6.7fz"onclick=showFSIMG(6)> <img id="6.7" src="https://lh3.googleusercontent.com/OneEhFLqivpIKyLN1yEImc9sjQ-egDUbBjCfju08O1fOpUyFWDSE3XJG9-n7M3wsVEdYfunkmWzxalDBM71Z6Pea6L3qj35kuHW4PtzpSjC9zSdhiVnmBC_cLVbgyJQv60y5fnv2DQ=w1920-h1080" alt="img6.1" style="display: none;"></a>
+			   <a href="#6.8fz"onclick=showFSIMG(6)> <img id="6.8" src="https://lh3.googleusercontent.com/vfLEoBM7G9TsSEcIIlZ6SU8jOURDsxd3rZH4gdjkrYVwYASW0KlAGI_grzp1BUQL7cGKw3uZAGSObrmwUI-rxauJsBXgDzNBG-LHiLvopSl3WiiEhvhSEO5nq9i1oLeM-Ts3S80s6w=w1920-h1080" alt="img6.1" style="display: none;"></a>
+			   <a href="#6.9fz"onclick=showFSIMG(6)> <img id="6.9" src="https://lh3.googleusercontent.com/pIF2J78FtA0PAx3zi1pPDQZ-yNbxkdvYVbSE5zGJPnwhElnJc1sZ3YlSY9lOdHksX1RyV2LWvrB9HHrTdjV8ye4zkzdT_aOf_PMTHjQXlb7iamsg_vW1Cq1M6xTYX5aZUveSvIo34w=w1920-h1080" alt="img6.1" style="display: none;"></a>
+			   <a href="#6.10fz"onclick=showFSIMG(6)> <img id="6.10" src="https://lh3.googleusercontent.com/zMJEdjEagg1SsD2n9Th3U6mVFs41We549_BtHY-VWc8qXFwX79eERSArT23Z4xVe7_GUhY9_XSKHRZKuTICW-QsKWM9SZaZST2tpNAH_sR09IWHA7wIEarBKeOZFXf1Y-BsPwEF1GA=w1920-h1080" alt="img6.1" style="display: none;"></a>
+		    </div>
+		   
+		</div>
+		<div class="image" onmouseover=showImg('7.',10,7) onmouseout=hideImg('7.',10,7)>
+			<div id="setImg7">
+			        <div id="main">
+			    <img id="7.1"src="https://lh3.googleusercontent.com/9ljGk61qZWKj5_0xJ4vPjfIObz65GVDOK5xkaPiuJOxG5RCJpZjDEUKSdgydxBGgPQ7ILq0gzS6gT1qpvy6GKgfgIY2XWsmMIj0sHxlIVHj7bGiyXTnxv4Pe2op076oDxLyVUeGUjg=w1920-h1080" alt="img7.1" style="position: relative;">
+			        </div>
+			  <a href="#7.2fz"onclick=showFSIMG(7)>  <img id="7.2" src="https://lh3.googleusercontent.com/jR_--VEl2DF7Xt0RjO2waKqXKxOthOTWi_wmFI7mhL4XCXdSKogCOum-0QCwjLUGloSIl1w9wttgFn2zMpcQJJCfrMO9oZPdGjI-RZzUnnUtbbdSzUKnrE-4cNv96-lovcoXTHLutA=w1920-h1080" alt="img7.2" style="position: absolute; top: 0px; display: block"></a>
+			   <a href="#7.3fz"onclick=showFSIMG(7)> <img id="7.3" src="https://lh3.googleusercontent.com/xPvoDHvuouOUXgFOL0JYsyDJ_0NrmoZ-TRu5UlCvLhqLY5X6PRo4siXWDF-ydlQAjRLv041EqO5f5w9NQ02IchqeIowb4vFuAjsPxmEQX4LNCd3eGb6NmREVOB0W17hH6uziIPQtXQ=w1920-h1080" alt="img7.1" style="display: none;"></a>
+			   <a href="#7.4fz"onclick=showFSIMG(7)> <img id="7.4" src="https://lh3.googleusercontent.com/hXFue8db4n2qjHT1zIjmsGcjUezF6d1L9jXrNqw-zQx20fxnyfadaAhx0NyPtgNleFdS6SgDbH00RXh4gOzvbFAo7SJE9aINm9GK7SWPLvioRGgu8JCCvC15Xqq_-McGwqVjAAJcOA=w1920-h1080" alt="img7.1" style="display: none;"></a>
+			   <a href="#7.5fz"onclick=showFSIMG(7)> <img id="7.5" src="https://lh3.googleusercontent.com/Z0tMArPF597BDUHaahx4Hfd5jGExuk_mPdBTlj0mN8c_GzE5Xa4f51jXijrStg2oo5jg9Ltxoj4AkyVWLCz3TDXFZux-KfYuQ1moGikdhwIIq-ropqRSntg9G1FFrydF0K2_gjX5Qg=w1920-h1080" alt="img7.1" style="display: none;"></a>
+			   <a href="#7.6fz"onclick=showFSIMG(7)> <img id="7.6" src="https://lh3.googleusercontent.com/YqiWvzttG_YwveX0KH740vJJTNlCyoTSq2ovGtvBBsn1ggTQC6MbdSW6sKQC4yogOZUlOqw3oPWd01gzBeqrrqSLzXi5pDvQpTNHi2YuJyUil0MPBwIa8nxABfss3XqF3ZMt2iBPLg=w1920-h1080" alt="img7.1" style="display: none;"></a>
+			   <a href="#7.7fz"onclick=showFSIMG(7)> <img id="7.7" src="https://lh3.googleusercontent.com/hU4AULIn7oItCbFEtX0jQzwkWuR-PtaVSzgkdlJbg7lUslymKZB8VlkrEI5AATmoLGZZ75uB0VVc74p-9rOo8K5vcSuuUCpnyJ6IrGEDz_eZp29tpcaoBqm3Uo0leC2Api9lJa7VLg=w1920-h1080" alt="img7.1" style="display: none;"></a>
+			   <a href="#7.8fz"onclick=showFSIMG(7)> <img id="7.8" src="https://lh3.googleusercontent.com/DVSDySjcsDLmRsdHvVgU8JC_seNRkHLZaRv4LwBnsb9hnDE6YRIXZLDKridMwrf-qLdxqXsol2ZfV2cGpKmvNL9nZXPv1MkrIkrNMGklmYCtdP1f8ws_NO73BujvOmYYTerg84nZQg=w1920-h1080" alt="img7.1" style="display: none;"></a>
+			   <a href="#7.9fz"onclick=showFSIMG(7)> <img id="7.9" src="https://lh3.googleusercontent.com/UObOi1tqjtYL5_OV_mmg_jzQRy3BGYDLrZ-pJwdapZsDy5aRY36vb7aeRgwKibJdLjObh3MxXy93HUVJDMp-2y_c19rmph1VBtjMLsCiq-0l3r5Eg4sOX0VfQLVrI1qvC36x9a6FJA=w1920-h1080" alt="img7.1" style="display: none;"></a>
+			   <a href="#7.10fz"onclick=showFSIMG(7)> <img id="7.10" src="https://lh3.googleusercontent.com/0rHN_G9I60mGvcITkKiJu6OiIuBs5Z7ZDJPQYf2WuMRL_24ep0XYhVKOzfo_eJBICk_eUtOjX_FSKMDaxvchmhRlbt9BsStqjmOWqGf1VayIDbJ4hG7qLUsYp3E72bs1p6zQ48UH6Q=w1920-h1080" alt="img7.1" style="display: none;"></a>
+		    </div>
+		</div>
+		<div class="image" onmouseover=showImg('8.',5,8) onmouseout=hideImg('8.',5,8)>
+			<div id="setImg8">
+			        <div id="main">
+			    <img id="8.1"src="https://lh3.googleusercontent.com/GFKymB67-yVoFrwSXAFBJZXiq1yrFHb6EZik05M9pAp6LGqV86xerX8JR8K17GNh6B4DJn7-WYvKnKi95yBzsWatEjkJJMB48VsU_LdM0VtNnG7Xwl-XTxoZsrKaXroHjUieC_CkUw=w1920-h1080" alt="img8.1" style="position: relative;">
+			        </div>
+			    <a href="#8.2fz"onclick=showFSIMG(8)><img id="8.2" src="https://lh3.googleusercontent.com/ad4BY3S0OkqGG6-JBjR87Swk-yWOOiUBc1aSysKEgK1pRY447FhXUl8YTtRUm3cLvXa1x8sdm4anfYSQAREmzrMynUfUZ8OCkfax1cmGhUBjWQkwxB_n0O2jfk0htY5cSyZ8hKHjQQ=w1920-h1080" alt="img8.2" style="position: absolute; top: 0px; display: block"></a>
+			    <a href="#8.3fz"onclick=showFSIMG(8)><img id="8.3" src="https://lh3.googleusercontent.com/zrYbbOJ59pjg9BVmnn-0p97NL4ejcWIqcg373ai0lC9SqfCpk9CAOy9ED0q884J7gXkrJ-6IWGTIBLh1LZlB3QmN_jcbfCxwoy-k_HDZdQ9EoD5dIBfoDTu8KfKZ2-U4rI4U6PJ_kQ=w1920-h1080" alt="img8.3" style="display: none;"></a>
+			    <a href="#8.4fz"onclick=showFSIMG(8)><img id="8.4" src="https://lh3.googleusercontent.com/8QzYZRnsyVqZ8xj5cGuEsiNHOxJ0Im44lfwNwWhLPtWGZybRQXTi4qaAuoCFaYAkfRnW5rP6bsrO5PVzUKz7CR07qcxpfqTfKD1q6qZghNagp0KLpBD1zlyUYr1Vh4BVEYFmVfSHCg=w1920-h1080" alt="img8.4" style="display: none;"></a>
+			    <a href="#8.5fz"onclick=showFSIMG(8)><img id="8.5" src="https://lh3.googleusercontent.com/IpE4bvBYWF8KD_tznGKB7MvtqBw982jwqsCTteUeOkadSIjv8gyzrQNHK23Ks3yQGmW_m7DpmHEOnHnX3nykvH_xO_6sfG64YXEYomzKxMlBTK5mADrPhkc-r9LxC1OZpSpKTAAb-w=w1920-h1080" alt="img8.5" style="display: none;"></a>			  
+		    </div>
+
+		</div>
+		<div class="image" onmouseover=showImg('9.',10,9) onmouseout=hideImg('9.',10,9)>
+			<div id="setImg9">
+			        <div id="main">
+			    <img id="9.1"src="https://lh3.googleusercontent.com/7fG2gQ0L9mqFcvIoaDlnbAIxB5shKfDk-vq5YPUqJzCbUSbBB6RG-BawUMakTTgakFddeHEs4sUURAhubyE4dY8C6AumFK1ABqxb_7nMhGKkA2fuklIf2PrFFN7Cq2OBw6R7lNiP9A=w1920-h1080" alt="img9.1" style="position: relative;">
+			        </div>
+			   <a href="#9.2fz"onclick=showFSIMG(9)> <img id="9.2" src="https://lh3.googleusercontent.com/2DXAtrLJ8nWNzG5wo4vQnixZoa-dtA5i93_jYVD-_J_-r4eGcadOOOQOKsGvVEIh6Ol_rA9KAO3soByz-On7IHjFzCpgIzhxdI06CGAJI2I0Km4DJ51b--DGWi1R0zHI_9AwR43jFQ=w1920-h1080" alt="img9.2" style="position: absolute; top: 0px; display: block"></a>
+			   <a href="#9.3fz"onclick=showFSIMG(9)> <img id="9.3" src="https://lh3.googleusercontent.com/q7E5ZdT-G6wqVir43lziCHxhNWUKqw53gC1eGTUdjKC9Qf_em-SISo-iEeI3UXLgE5jl6wQSP8nteq1H05oIM_CvrzaZPzkH8IBjzxY2R8jkDQxPTIMg2nmv-u7ATQALrjgXH3W73w=w1920-h1080" alt="img9.3" style="display: none;"></a>
+			   <a href="#9.4fz"onclick=showFSIMG(9)> <img id="9.4" src="https://lh3.googleusercontent.com/t4WGtip-XQms_E4DVIFMRiLE8Sgmme0dMY8_RenKsjlXlBHAyl0Sbrbgc93BCaAwpnG5qcFOCbzmG5YJPpsheOK7Y1u-Cnjk_81dz8m3ppk0XLspNQSY0AGZ2BIseQWAKjQ3gDPbwg=w1920-h1080" alt="img9.1" style="display: none;"></a>
+			   <a href="#9.5fz"onclick=showFSIMG(9)> <img id="9.5" src="https://lh3.googleusercontent.com/xRroB1QBVPb-HKiJKCG6VrfclGbt6NSJwv54GQZY0kbGUayA5jHBWg9v2mhN4WMGie5LxSBLgqHYcX0ao2B4u6zR8eNxNmebi2szLQzL9sABJmg62-VFN20rbiDzPbH_UwngaUxS1A=w1920-h1080" alt="img9.3" style="display: none;"></a>
+			   <a href="#9.6fz"onclick=showFSIMG(9)> <img id="9.6" src="https://lh3.googleusercontent.com/wvYBCt8LhNs7kL8-yBVcBXO5qwcXTrc0-ue8a_mdhjail6BoSsKj6_OykbxTpljovUL7tDQZcc6FKyTz9bRENMvR-zrvNIAMj3GiM6EikCbuzvTSVIWnLQP7oEaruk201pFMNyQ3jg=w1920-h1080" alt="img9.1" style="display: none;"></a>
+			   <a href="#9.7fz"onclick=showFSIMG(9)> <img id="9.7" src="https://lh3.googleusercontent.com/BT-yqyOyAatcRXyheoqH6wlN3qE5nWwe6dFZzlAarZzu9u6rqUnEVyO_rGM3sEnczVI-fSJVK93ubuUvz6PF7GAsNpKe35tbWflSoD1sZ-6y-5s0EUDgJUF4D0ZecU8dxBiSrLRXQA=w1920-h1080" alt="img9.3" style="display: none;"></a>
+			   <a href="#9.8fz"onclick=showFSIMG(9)> <img id="9.8" src="https://lh3.googleusercontent.com/DA5BvTxuRKYZMAsd3LOUYf0wdKoSZxyACvAptEqyZScpywYXEOF9PRkOJXGk3FB0Vu3fTDMTDg28PNkRGUjuZXPCHzN8mpP3YrDK-wbKPvh_y2Lad97EQ5rTURzLNWNrpAx_LM9kIA=w1920-h1080" alt="img9.1" style="display: none;"></a>
+			   <a href="#9.9fz"onclick=showFSIMG(9)> <img id="9.9" src="https://lh3.googleusercontent.com/TUxKkXfexwJ17fxUX15uHUy8fyZdC0GzHDeaTlzl--L8a7hiHHDujs9tF0xOlCzbIUpmsLURGs51UgIbjBQipEuKnaeHjsRZztGenX44Fqn6zFz8e4MGddgoJRcQpBq37y3Es9UErQ=w1920-h1080" alt="img9.3" style="display: none;"></a>
+			   <a href="#9.10fz"onclick=showFSIMG(9)> <img id="9.10" src="https://lh3.googleusercontent.com/cC-HWnuuF-ltR4hCEMfzq0M26jpGOocmlSuUj7WoYbJghNEIJPVzWyBXOf9CO4XOkV2_IjqBz1GQbdvlrAJ2vd_5AqP0V7efoS8L3xtziGC5TKZyKO0RVUrv_jMAzuJ4j-OboZwKJQ=w1920-h1080" alt="img9.1" style="display: none;"></a>
+		    </div>
+		</div>
+		<div class="image" onmouseover=showImg('10.',6,10) onmouseout=hideImg('10.',6,10)>
+			<div id="setImg10">
+			        <div id="main">
+			    <img id="10.1"src="https://lh3.googleusercontent.com/yebwTD7Pd0ZHR9Us7xzyGw4NiF9eGrAuuk9YRPg4xod0aGv1ivirc8BW61phiWUUMsxLq4G_G3fJX5Jp96meU4oE-bmv0xUjjx9103RHqVGC5LRyayavmRhXKuq6NxIcJFj-vxdf4g=w1920-h1080" alt="img10.1" style="position: relative;">
+			        </div>
+			  <a href="#10.2fz"onclick=showFSIMG(10)><img id="10.2" src="https://lh3.googleusercontent.com/VTMf0BeNw4oOPrPRRCumasRP1QT0SnYtu8m4-_bCDXQftEsG3-PXAvfNOZI3nBa61yD2QTJOGD6oNflDr-mkqMiBfEz7-grs8B8_13trMpdZ7y46-RJCWZ8MFpxgKzFa4nbM6KEWrg=w1920-h1080" alt="img10.2" style="position: absolute; top: 0px; display: block"></a>
+			   <a href="#10.3fz"onclick=showFSIMG(10)> <img id="10.3" src="https://lh3.googleusercontent.com/nz_9EXeqhaGUt0GCA0RQ001sZJmxl9-19XXedCPeVJ772xkFNiMZlsKU2fuT0aIILkoJdRky9gKfPFYzfeu6DAXoYSNN9IEPACcquMxNwdRfe6hUzb-KV6FepLFdHK49jh0RmXQGeQ=w1920-h1080" alt="img10.3" style="display: none;"></a>
+			   <a href="#10.4fz"onclick=showFSIMG(10)> <img id="10.4" src="https://lh3.googleusercontent.com/8jAafhpD30TMDJKcUaUvR8TtyQQxOedFT-uvaYnsiJEjblFA7noKvrPor0zfOKYcrtFdoRGkmnO82Espwh4sZtC7eMg3sFjFg3NM7icyO6_C3Ahrv1RoXQyl-j5l1We9sQEdWBrcuA=w1920-h1080" alt="img10.1" style="display: none;"></a>
+			   <a href="#10.5fz"onclick=showFSIMG(10)> <img id="10.5" src="https://lh3.googleusercontent.com/w9z8S-msUvCYZO41-BgGq2CxQyZy1PJ-swRGhAN65ed3-P7E3JP_Z7lcvyNlRBwkT_3g-Y4BWoDckwVVYaukfR-mfM_El77xD1Alw-37xy-XYc2WK0SDgoUVjs_T-of7EwwCFvxtWw=w1920-h1080" alt="img10.1" style="display: none;"></a>
+			   <a href="#10.6fz"onclick=showFSIMG(10)> <img id="10.6" src="https://lh3.googleusercontent.com/K88lVqKYZ_S7JznkBNylOhPhSejnyoPZIx3a45DQUPJJniYtb6hjoljhAcE2FKVzCN7sTk6-wkTGlohgC-aIVB8Fi3yJ976z48-VrJCjLpnodca29ogap17_3rt9zkgmF8Zz9mWaeA=w1920-h1080" alt="img10.1" style="display: none;"></a>
+		    </div>
+
+		</div>
+		<div class="image" onmouseover=showImg('11.',7,11) onmouseout=hideImg('11.',7,11)>
+			<div id="setImg11">
+			        <div id="main">
+			    <img id="11.1"src="https://lh3.googleusercontent.com/bwTiYTdVP4JVZRCsJ1VYYo16nSNfBEKxE72QYjCMGn42A6VHCio3f2G40Y_JJYWooCHwfzfRtbh4kG1nQkWtCh8dxAge-5Hc1b2jPtiG5DjPbI25_hdhq-toWsKD58GvXscesCHfuA=w1920-h1080" alt="img11.1" style="position: relative;">
+			        </div>
+			   <a href="#11.2fz"onclick=showFSIMG(11)> <img id="11.2" src="https://lh3.googleusercontent.com/gQ0PRg0jcbWBnw09alDtv-Wo6_rWA8QEty7e92jnsYbLVd6cFWvPW4Ck9T_s2yIWqyKiRiVj87EIBDEkwpdM-dpUXfeLkkZcCZ02wP15y7Je2_9sq8Vkbk-yshu-CVz8wbNbB7-svA=w1920-h1080" alt="img11.2" style="position: absolute; top: 0px; display: block"></a>
+			   <a href="#11.3fz"onclick=showFSIMG(11)> <img id="11.3" src="https://lh3.googleusercontent.com/v85MhhNi773goSUZU0zKWIjklqeJs5_mXTXUDG6NkzpubRyXNKj8tIoCTBwbBrsAyaPJFXL09HMk7f-pNcRSPqn226L1X0KRRJMAdTmoYih6E2GkJivrBjvS0GZLzR0VU1fg7PKfsw=w1920-h1080" alt="img11.3" style="display: none;"></a>
+			   <a href="#11.4fz"onclick=showFSIMG(11)> <img id="11.4" src="https://lh3.googleusercontent.com/17OckGXCd1eGrTgS3RdmJrzP_CEc4BPdCIRsbc3GTTgF6itboMeIJrJJsT6TIQxc9FzLBuyczViYN53BdPwQJJ6QG8Lk1uh7Ihfe3Jwd4-R8KQgQlKMVmBRjOpr0jPQG-9kByMT2qw=w1920-h1080" alt="img11.4" style="display: none;"></a>
+			   <a href="#11.5fz"onclick=showFSIMG(11)> <img id="11.5" src="https://lh3.googleusercontent.com/TvBywEyvxggM4ww8l_XGfgWwTj4Q2hSE-Tmm-nvEjvNOeXSOZGArCJTRV3yU1-17i6lokrz6H0H4w4SNUBSrVOV7ucCXBdnRvuHTN0lZGk4XkhQbrEa0rrXsfOoId5qo7R4a4Wj-3g=w1920-h1080" alt="img11.1" style="display: none;"></a>
+			   <a href="#11.6fz"onclick=showFSIMG(11)> <img id="11.6" src="https://lh3.googleusercontent.com/By_9Lw79D2V-3JVutoDH_k_xCW5d0d9HLZkaMOKQGgzuTUiSSSPhwxq8DjChReVhy15bNYF4e0CkMyfhoNgbkZ4J24-imYiWr4xDppljedFGhDMPR59ek9iTbUxV6EQ0nNX9QWNRMQ=w1920-h1080" alt="img11.1" style="display: none;"></a>
+			   <a href="#11.7fz"onclick=showFSIMG(11)> <img id="11.7" src="https://lh3.googleusercontent.com/o8PpkgQnpEl3XVZgoMeLJPbA3EruCZ6rNljav8oeEHFVFf-7hesbDjbb2lgoTLLD8j7JNZomK9SYq2ObZ0KvtKmH58mETBLub5GFJr7zmDG6GUMwCrCWdHpFAnY3Z93NK0Tjp0306A=w1920-h1080" alt="img11.1" style="display: none;"></a>
+		    </div>
+		</div>
+		<div class="image" onmouseover=showImg('12.',7,12) onmouseout=hideImg('12.',7,12)>
+			<div id="setImg12">
+			        <div id="main">
+			    <img id="12.1"src="https://lh3.googleusercontent.com/WjcjfKGqFyVJOKip1vaqjGx3VP6kEl15NtqxSxVc6OHPKBB6rowiyBXsLnGjMWwD3APRTuNZGDjfCiin2Gxbry7xA6GDOBfX36zCAXdMWsCm8gf7gaVdbJt6oQAFWd1zUeNCAS8aDw=w1920-h1080" alt="img12.1" style="position: relative;">
+			        </div>
+			   <a href="#12.2fz"onclick=showFSIMG(12)> <img id="12.2" src="https://lh3.googleusercontent.com/5U4oKlLCJo7N8Xeg05Pz3xKaSidRRpfSZh3Lxfrs4RU716TXo88EvA6nKV90BYODbVN60PAwJXCTchrfpKyqGfiHCUbXAJh-5PVhwhIAUuK62vbsaN-5k7jAsfUSCH5J9MeGt1QsIg=w1920-h1080" alt="img12.2" style="position: absolute; top: 0px; display: block"> </a>  
+			   <a href="#12.7fz"onclick=showFSIMG(12)> <img id="12.7" src="https://lh3.googleusercontent.com/bJhpiu35JQasW4WJ1RTPrwGNcpMpyRKfhycTVhgQXJbPTSxCdcJwUmUMpn_kh2dTFOS3kU2akxkaHpoJyq20J7P14FuppQfdfMmRwfy3ALmegiK2cTdbqbCFyVAPKsvoPZEEeUaJRw=w1920-h1080" alt="img12.1" style="display: none;"></a>			    
+			   <a href="#12.3fz"onclick=showFSIMG(12)> <img id="12.3" src="https://lh3.googleusercontent.com/N-028j_1e5QoCD5c99vFIoFDsuzG7oUEQz-Ogp0ZTZLgt3-SQyvYxMhGQllWeOA2sYSLqUPCbC9AzBuGdPdRfW--YJm2JW-UXcqMWJMfIwoyI9VbnjELCwhQecn_IwDPM3O6On_xsw=w1920-h1080" alt="img12.4" style="display: none;"></a>
+			   <a href="#12.4fz"onclick=showFSIMG(12)> <img id="12.4" src="https://lh3.googleusercontent.com/OiEjOQqPUBI3KUXMXNpabisxmHbZbLdlIwrOwVFdhr5HADanRGDoMrTBMTWN1UQhx_2LQk3RIVvqSPqqvnDWS_R2vd8bwt8b835z3xFZNMxExN_RyscFzlkpaJCAmjzGKXJOmUgHdQ=w1920-h1080" alt="img12.5" style="display: none;"></a>
+			   <a href="#12.5fz"onclick=showFSIMG(12)> <img id="12.5" src="https://lh3.googleusercontent.com/cR63iKZZ9VTx1CrOdm-YnJFM6jaMh5j0emwjuqdxx60nvTIamrGQTycRpKTx7BNl9bvLNBrqVRFneC2L9XJkWHkFJGPIC7OmQkW9qznaRyLARKtRRGPScKrFyUlC_5DhngXrW4Vx-g=w1920-h1080" alt="img12.6" style="display: none;"></a>
+			   <a href="#12.6fz"onclick=showFSIMG(12)> <img id="12.6" src="https://lh3.googleusercontent.com/cLuqG6DBDDigIOK9PSPtvnnzGPbSRp0iLeDIQevEKqC7s1APgCy4y0DQNGzpMe7TRfsOXz__6q2UL1LYWeJRxJWDP0c3DEtK4OFNMsWBF_rmRcMyn61Jo1TPggpMSf_Aax5aniJIfQ=w1920-h1080" alt="img12.7" style="display: none;"></a>
+		    </div>
+
+		</div>
+		<div class="image" onmouseover=showImg('13.',4,13) onmouseout=hideImg('13.',4,13)>
+			<div id="setImg13">
+			        <div id="main">
+			    <img id="13.1"src="https://lh3.googleusercontent.com/98lsPxgt2qfuH9yjBWJ18DvuHOA7z5ow-ORdYvEehPE2pJMa_dZsowv0V0YsA4-9_LamjB-qoun5klBEOdh0lMSb06rq6Rc5xR3I9KTSsFJuaT66z13jE6xV2tRIl_jglWzY0BKR4g=w1920-h1080" alt="img13.1" style="position: relative;">
+			        </div>
+			   <a href="#13.2fz"onclick=showFSIMG(13)> <img id="13.2" src="https://lh3.googleusercontent.com/ANFxDsLOea6vVenTCFAEF1n5umWoCGNULcNxpc1YrK67b7Stzr_1LoG-sBcb3JJf8BB3w4mNjXeAMuk56nmA5lwJIKL_4ktSA_SA0DSG7yx2gX-SfgaYazoiO674VFGj4uY3M8Y8yw=w1920-h1080" alt="img12.2" style="position: absolute; top: 0px; display: block"> </a>  
+			   <a href="#13.3fz"onclick=showFSIMG(13)> <img id="13.3" src="https://lh3.googleusercontent.com/JaMauVQEK7lthgH1c1NRO3ReNpdAnovuIl2kh3UpAHMaJmdd-rFf7eGGCXZ2cvfJeT7Md_g5W7nVxnt1bIVvyQIvdkmQbeF8YgC9u_NcKPhcDSQbjgw0eqFH9KQ3iwlM8XxLg9mo3g=w1920-h1080" alt="img12.1" style="display: none;"></a>			    
+			   <a href="#13.4fz"onclick=showFSIMG(13)> <img id="13.4" src="https://lh3.googleusercontent.com/DWoxbCQxircnomVw9st3D0ePosNdmxXwqenRHt1Cee2PvVCfwVp3qWK9foQXqMvOLQD5OS9hMlZ5spjhl594Eaxr1VUUgQZxZrxe74c_POiVL_GHNZM8oonWwfHUGCgWQso0YUSW_A=w1920-h1083" alt="img12.4" style="display: none;"></a>
+		    </div>
+	</div>
+	<div class="image" onmouseover=showImg('14.',9,14) onmouseout=hideImg('14.',9,14)>
+			<div id="setImg14">
+			        <div id="main">
+			    <img id="14.1"src="https://lh3.googleusercontent.com/iqPcpqd--osUx7B_-WvZNL7L7sXKh6Y2JHgjDvrwGPwsQ15zVy5ZLuMI_XalZKsrUYAqcIdsv2IiZAS0KtB1Zq-LfVEbH0FMYiG4wymQg90-JGkPemzGlpq4dRNcQ6f1JhieTgFC4A=w1920-h1080" alt="img9.1" style="position: relative;">
+			        </div>
+			   <a href="#14.2fz"onclick=showFSIMG(14)> <img id="14.2" src="https://lh3.googleusercontent.com/9mfdkeZRLmu_D0eXsY04t_DzHPZqcHyKaxqHcTTCcDHSFMS7i5JJ4eCkZyM80Rq8O2GD6XsXg4Fp0Zy1eN0YJgdWXoqef9UQf2FWP00cdLeRUMLxCFIxZdBoI8weuBDZVNoxj2czhg=w1920-h1080" alt="img9.2" style="position: absolute; top: 0px; display: block"></a>
+			   <a href="#14.3fz"onclick=showFSIMG(14)> <img id="14.3" src="https://lh3.googleusercontent.com/xBSW1DOjWJG-Rj1XN9VsJnS-lhuz11SujJxF_bNAxWRROCu9skiBrNNoiEZIkId0LLtu_C1dKzyrQIN4vf-DSD47opHkq_lRUffNEQ7cu-_RBYucg1GkzW7HvbeSLbcIJDhZP78xlA=w1920-h1080" alt="img9.3" style="display: none;"></a>
+			   <a href="#14.4fz"onclick=showFSIMG(14)> <img id="14.4" src="https://lh3.googleusercontent.com/L2uqWBEvlHWazOKUYbOqLWVuP-GJ53XPARdT45FlfCA7KZU1cNCstrgPTBKvNSxMH6MV-GkSP-D9V_AwfqkNy5y7q85n8AE6jaiAAxsNLs5wOVt_RMQ7nSVon_zd4D4Zu9FVWyTEHg=w1920-h1080" alt="img9.1" style="display: none;"></a>
+			   <a href="#14.5fz"onclick=showFSIMG(14)> <img id="14.5" src="https://lh3.googleusercontent.com/IOeOUo6VOdRXTBv10fEWMbjBbqaG_fTHVjMLQiI3Lkb06dprCuxG3vpUSl82UqZTy7cmRrMTsKi9PneUatlVwHNiccBYYJ7XVd6voXcGeYxURNN_j6oQJx5v79y9fcMvLDrPgCpQUw=w1920-h1080" alt="img9.3" style="display: none;"></a>
+			   <a href="#14.6fz"onclick=showFSIMG(14)> <img id="14.6" src="https://lh3.googleusercontent.com/z0LKBxBZfPbSQbSUdN1IuLx3qTXpamoyV7Gpu_HGeQYdge7HizGZt6CmpvPtldPOSkadzTx0lB1CocN_t53-R9xp6RTAn7XctN80xEXSyUJdLxKevkOWT22b_k9Y_Shvcw7UPB-zDg=w1920-h1080" alt="img9.1" style="display: none;"></a>
+			   <a href="#14.7fz"onclick=showFSIMG(14)> <img id="14.7" src="https://lh3.googleusercontent.com/atmpCRP3SrNpipp_cP1JimOUKhCNYeC3r6aGOOR-PYB57xkoLJFUFUewdPKbio5wWil5TXRGhKjJQ-tvUlhwrr9o1NL74AU0QjbuPvdo9hbIF-lmykxGqEqKjrz0QS0p4h2dhxM52g=w1920-h1080" alt="img9.3" style="display: none;"></a>
+			   <a href="#14.8fz"onclick=showFSIMG(14)> <img id="14.8" src="https://lh3.googleusercontent.com/UHYaQbW3g1_TeABeoFncQ0A07SlpXAMw094XDh4XR1aq52UiqQjO0AgD_jYLFnIZ_Ya_4GXxc07s9Hy4bMWKR6k9Jd60mx_S1dzLrkQvYHuRsR-crj2uJGAhULIiUI0u0pBeMdXPUQ=w1920-h1080" alt="img9.1" style="display: none;"></a>
+			   <a href="#14.9fz"onclick=showFSIMG(14)> <img id="14.9" src="https://lh3.googleusercontent.com/RZLbtfFl1uK9nT-nJvChDHPzOrmbuZ0lSvoRzjoHX6iGjqB_URdrBpgH1kJx_qYE92oBsCKRHtpTzLXCu1-f3rcCEyYu5AZij0VlPjznhW54i7z9Ck8jqPA4avnSjNh10AuoreZP2g=w1920-h1080" alt="img9.3" style="display: none;"></a>			   
+		    </div>
+		</div>
+		<div class="image" onmouseover=showImg('15.',6,15) onmouseout=hideImg('15.',6,15)>
+			<div id="setImg15">
+			        <div id="main">
+			    <img id="15.1"src="https://lh3.googleusercontent.com/AthA2V5t9PM48T2DtF0a0WUlE5_dwfoaig5kJT2QJmNpdeRix0AZw5tAebzJWcINjJ6wYS40u1dKDy8Ydo1hEkSXuGx8DNyrnKyHeRHeV5db-zMgCnS1s_gwVBBcpf4ffpEjSLWVfQ=w1920-h1080" alt="img10.1" style="position: relative;">
+			        </div>
+			  <a href="#15.2fz"onclick=showFSIMG(15)><img id="15.2" src="https://lh3.googleusercontent.com/UYTCVXQwc61QBS-CrlPoqeZVCtPQSCuPAza002ULDmkapjl_J_WeqDTLyR3jAnlxa5kYRoaH45-p8Y81mCPqS8ppO5uLR18fxtw0DmE2ynd4cM3Qz1uCkFf0p0C9ILt0BMwO54qYRQ=w1920-h1080" alt="img10.2" style="position: absolute; top: 0px; display: block"></a>
+			   <a href="#15.3fz"onclick=showFSIMG(15)> <img id="15.3" src="https://lh3.googleusercontent.com/yqinG_HGxQi8MOAL6xO0Zr67rIc0K6xfICYAEan-BTPe0viJqwn62u9O-4zE1s9rJj_7FTYSVCFpZpqQIkop_kWdy4NvLf6jKo2fEIXeGW1NhNxP72Dxe2ETbes0TbcU48GX4H-X4w=w1920-h1080" alt="img10.3" style="display: none;"></a>
+			   <a href="#15.4fz"onclick=showFSIMG(15)> <img id="15.4" src="https://lh3.googleusercontent.com/rVgH6ivLQ5fZEWWWEg1A0Vks_WWKX_5qJgba57anrIwBxxRIdaFRUNhA_ntbXaVmPX75DOGXMbl_E96ZkXCHG0K8sqaeePcBaje6b5KOi7QH2ZgXTbAN63EM0MsUXEaKVPg9rHBftA=w1920-h1080" alt="img10.1" style="display: none;"></a>
+			   <a href="#15.5fz"onclick=showFSIMG(15)> <img id="15.5" src="https://lh3.googleusercontent.com/KDdDWVjbqjQzvx7UuDORpn2G594LP1K65iG-BQywWbpTsVs3DFk9CETDJFuGJLX9A6OrH9smgTHTPx89pboYcq7m93kwTWrAYYQM6V5qD6n8Cf92Oy7yYDsYLnW4VKQFuRjBORuNGg=w1920-h1080" alt="img10.1" style="display: none;"></a>
+			   <a href="#15.6fz"onclick=showFSIMG(15)> <img id="15.6" src="https://lh3.googleusercontent.com/KvJI2tCnPF3vR89ArwYkWNanb8bEkK3HN3BsVt5pg1rJLy9-oVvz7lflckq38Aav9mfzZZSG5b2IP3ejm8REJr1yZtmJ2FA_4tIXAphZXh-aGuZP4Pbu-H-noUu2FtK23l0kIR4_IQ=w1920-h1080" alt="img10.1" style="display: none;"></a>
+		    </div>
+
+		</div>
+	</div>
+	<div class="fullsizeIMG">
+		<div id="fullsizeIMG">
+         <div id="fullsizeIMG1" style="display: none">
+       	    <div class="IMGfz">
+			  <img id="1.2fz" src="https://lh3.googleusercontent.com/kqmh7WJH1ABCzm1-xD23wcO29gEQuvkbL2c2vdR1Cnpo_CrgtpLTWSJZE1UKakmMZZKt8wHLVNzpIkmZH0O7Nnt4fgpdVgDsCySwx6lGAzOU9X_dQ-SBps8rsuSmEFV_HS4PPIRuag=w1920-h1080" alt="img1.2">
+			  <img id="1.3fz" src="https://lh3.googleusercontent.com/3xuzMANF6N8ziYHT-3r1Elm-ZEr77roKRp53eYWD42Ea2S90e09tjG6cAVRsYe8pnVYEq_OrhMbmD3K6bq2KqP9-CkI_dlfbITcdr7ne3hmDxbR865hyZ6TASdui1pwBGgOA4neQRg=w1920-h1080" alt="img1.3">
+			  <img id="1.4fz" src="https://lh3.googleusercontent.com/W3pJAfribTWk01Vfd8O3TWqyTQcpIGhnvzHahb2MwE0SJkEKo2cQCInbrG2Nw1fUQOBXQGAxUyuCNrwGhxjM7wr2qE7WGnD42CcShowCNXhzm2le_OsXo1J_EaRaSmCV-FCqnM5K4g=w1920-h1080" alt="img1.4">
+			  <img id="1.5fz"  src="https://lh3.googleusercontent.com/itrokcQMD_iE6UVntN8JsaWy0CwrrAgSAAKDWFb8T-rhIj2Srem-ufW8xgollXYvXVWWmD8nU0S3ZDYSmVlsa-fuUqzkJDnjUq0R4IW5NLuQnKIB5g_b-yH1P-Lx3dfheQu1Z0P9wQ=w1920-h1080" alt="img1.1">
+			  <img id="1.6fz"  src="https://lh3.googleusercontent.com/MhBivPZ4w2d39vDf7KGiRVHcHUSW8w57OumtF59YyLm-rrNqJCF6qI6d3QfEYRrZoNvfBWpgYPQ9Q6QcZAW_lqVkK7EFPCjqpGzu_IxFOfDjgI4cpZAbaug-cykbyfkmTL-w5GE6_A=w1920-h1080" alt="img1.6">
+			  <img id="1.7fz"  src="https://lh3.googleusercontent.com/9nAWY9RQdv946HOJsEkmRedNOSZrAOiBuDZttNJPHGtK5gvSPlL3-vrZxMLYpYWtTit1w7O2Nfi8QOvLhiOombTW1v25F8cPtKMexS6k1j-e_S-YtAIganFzQbqXaEt8g5Gdd7SfwQ=w1920-h1080" alt="img1.7">
+			  <img id="1.8fz"  src="https://lh3.googleusercontent.com/s6zMu0sdUTO95b3Kdsq8QJ7vaD0gU48mz4O6dL6qUEjf3LRn11Oag1Z2t-bLJYn6k275bLVSxNYiVhzJzsa4QRznkK699MYGQKNWm-CMVIe10IalJV_OgwJistZfEjeuaGWfDumiXA=w1920-h1080" alt="img1.8">
+			  <img id="1.9fz"  src="https://lh3.googleusercontent.com/DqndBU87hODQnYUG4gR2R50s9Pqape28npUXpas3erMbkctS6_zy-3STzPbCM9ulGJIj-sk-siKVMBDr4wBYb0O-KELQQwuYgD74SvF0iEnA2koIK0uA-wqlIFE4bgXcPR6jzP9Gfg=w1920-h1080" alt="img1.5">
+			  <img id="1.10fz"  src="https://lh3.googleusercontent.com/R2fE17lRGjlRepON7VeV9TJKxBkyTp-_rLzKYCm3j4Cnhzfu4-kZRmaIubYB_uxTYOvAMbxI6q0V72ofbIjwOsJVGy5MvNE9qZb-9jOm1vUwBRkIIYniPYH0Ls6mQtg_6PVK9xGXbg=w1920-h1080" alt="img1.5">
+			  <img id="1.11fz"  src="https://lh3.googleusercontent.com/cp_o2XDAcEr23clj9nxuJDu5kAxmlFGODgiYA6GJI92u1hn9ACqywSYnM6gp8HFoUSzzacsstONoXpekRHcJxZbjzMDZvzx6HUM9976ULq353s873RB2C8OllT6Aplstg-s0Nyr67Q=w1920-h1080" alt="img1.5">
+			  <img id="1.12fz"  src="https://lh3.googleusercontent.com/dJIyUxrPAEtK0KVE-JGueRUD-jdCzhh0CDySryCD6HGMkw4WooF_frRwV21PrW_wKPwW8ZJyIxENzJvydbxuHWkbuO6bI3VJToNW58h7ogR_Sw22PoxbiwgM0sk1LfGijnIQGpvS6Q=w1920-h1080" alt="img1.5">
+			  <img id="1.13fz"  src="https://lh3.googleusercontent.com/Q7I1atly3LONIiwD11qdwgO3f8YOL4T_aJrhgI4EALdvsuN7e9yjSNeCJFEGt4NuWABQYorXozn2cRnpu8DJ_34rSeEngz4JO7DAr3r55HqvdDjMTekZHlyevR_FFG82idDkYJetdQ=w1920-h1080" alt="img1.5">
+			  <img id="1.14fz"  src="https://lh3.googleusercontent.com/At5lktCUBZ0cuekNy1EBUeREycUodczipTqMM0nd2aIOv2Ddxj3GNvxnZeC5uPNrasYDT3rxxsNr3r8PCBEDya0RjG_vN3qoQw_tUV1NaOwNJIOhJQNAtGEa-mt4W2vGVd1hhF5Z-w=w1920-h1080" alt="img1.5">
+			  <img id="1.15fz"  src="https://lh3.googleusercontent.com/fN80vJkSD4qubO0rcCYws5Q3ua9GEF_rr51H0-0gNowOOqWnW6pr7RZnyWRsdULJ5eMmmTacSf1LlTOkLKyilyfiqyO5QuFDpMB2BL-4IgWjikgCNDZN30icbcyH5pMUEcy1ysJuOA=w1920-h1080" alt="img1.5">
+		    </div>
+		</div>
+			<div id="fullsizeIMG2"style="display: none">
+				<div class="IMGfz">
+			  <img id="2.2fz" src="https://lh3.googleusercontent.com/UXu8Eb1IG79tDeYhDhnL69RKI9m-adhHkTjUd3DQ0wycduBDHr-GPXnYiCslnH14XjFhBcWNgkq4Z7FT4wkdYQNnHHHMQ7osPphV19Q2_-srSF6cHtsYPN1IzxkECVDcAFyL6ErooA=w1920-h1080" alt="img2.2">
+			  <img id="2.3fz" src="https://lh3.googleusercontent.com/99A6D5gIJTtrdk0hvGPd32E0Yp9fCdAhF30b34pjSZcfi-ORHgYFdJ6gNl6ZrjXGEUo6uaR7w6e3xjNqRZCTZ6gLPl8qpwY4RZO6v0n54DwwzFiN9ZqrCC6Y_qJySEfPS30P1kI1Pg=w1920-h1080" alt="img2.3">
+			  <img id="2.4fz" src="https://lh3.googleusercontent.com/32U3PIoMeYIagaMHQeCwRYuAa6YR8733Mkrp8lQHArkyW_4fiwxa1Kv17wYeyb0kJHsXJdoL7z8yfW0RZcl_1b05HXLc9_9KtDcsUvROqTZ81pX-P9bgWH-4dtLxbaMueVB9H7yHZg=w1920-h1080" alt="img2.4">
+			  <img id="2.5fz" src="https://lh3.googleusercontent.com/TkqefFuo3qimyFDHg9hTbF5Jv4Wwmtan7rYebw8ZDXb6qsxX5YBYhFZBnRUYAK_c8bN-VQGfoM88xmVtOgf7WrE0ud_P4oxleTtcHWRZRvQxFhBaNedHbOLpH3XnMH00wJ5eztbLwg=w1920-h1080" alt="img2.5">
+			  <img id="2.6fz" src="https://lh3.googleusercontent.com/j7eN0wo648c-xS9S9F5sGi7QQ0lFJvtFxnUD9v3UVvzW3FoctBny0aJTZfes2LH8tgi8WIxNbwZCWir2jBd41ruICpNnll3bAcqhbbVR1orCyUHAFiiBQ5d7YBY_JhpCMRIQUSK6zQ=w1920-h1080" alt="img2.1">
+			  <img id="2.7fz" src="https://lh3.googleusercontent.com/r1W9-cO9IcJgGoS-ku6xN1uvMm5wgqgSNX_gsHmT8pVyVbbP_weFCrafXEkmiK6JF8_A5FYwivyXXw6mxFgwnM8799Ay80XtKKDGlIonYdy_YbLqA5psNt98W84yYHVxpdDe7dQHdg=w1920-h1080" alt="img2.1">
+			</div>
+			
+		</div>
+			<div id="fullsizeIMG3"style="display: none">
+				<div class="IMGfz">
+			   <img id="3.2fz" src="https://lh3.googleusercontent.com/MYgv5Fq4UNg67UpvqNKEntIyNQDAriKQtrWINYnOJPN7KZsEUQDvs0jm6yBrikUASOrfyozzF81vGCbQlC5u7QD0gMrXdUSldgkKmlrvHZ-9YKfH_PX4QumRXh-EdJir1IPSpp41lQ=w1920-h1080" alt="img">
+			   <img id="3.3fz" src="https://lh3.googleusercontent.com/AeAAhltC8Svop3UfC4rMWKCRsAnrTOcHzfrwhdqbrw8OY15dYnS2tBFtYM_b420dwOd5a2RSubNvT9hUUmDIuNCyPA517H0zOSWQoGvpcbdpGxNNG55SjSRAzPFBIsDh7f_lTHhGOw=w1920-h1080" alt="img">
+			   <img id="3.4fz" src="https://lh3.googleusercontent.com/TIesdLExLf8aLNp63Ts0wxP20MXUVNxC85YpKPVVQKSbiOpx4831Exelc0b_xgK_wGDQTaOMonVgW8C0jr-JyuOa3OPILuwkpaedk1JkxpFjYtTRKwGS3pKvkT4-E9chITWxx3JhcQ=w1920-h1080" alt="img">
+		    </div> 
+</div>
+
+			<div id="fullsizeIMG4"style="display: none">		
+			<div class="IMGfz">	    
+			    <img id="4.2fz" src="https://lh3.googleusercontent.com/Itu2EP8syv7uYlDO5VQspIoyv0Z2NyLGyl1oiscW8qDLH6SHuDQNhIvnARwXkA1PxKABwtAj3KGMzugBiV72IULNFb5h1_6yH9Cfd6gItamQKx7rce9Vkr_MpSimNgexq6QWPf_PMA=w1920-h1080" alt="img">
+			    <img id="4.3fz" src="https://lh3.googleusercontent.com/UFcUkIZbt93GXFruoEOZAUbGGeGaXbnHT-VDLtyNuRS8kyFjSmnDuUPE1tl98DQnTs0kCUXv2vQYi01pfanxORI0KiwRrNeZThToiTSOya_GOqWOI_SZnbQxr_DK2y5KI_Bf5vG96g=w1920-h1080" alt="img">
+			    <img id="4.4fz" src="https://lh3.googleusercontent.com/dTRc975bhiYa-vjTXY4lt1k8yLzwUgBwX0r79DyDPdFb58H0dIGl_Nzl5Ev5cUTLdwrPyRLUgP1qpF55eUkjprJueL5O20xXLVkyeHvgiCKayFBSq9Im4aKzX-Bq2Z_iCnYBQ4hPCw=w1920-h1080" alt="img">
+			    <img id="4.5fz" src="https://lh3.googleusercontent.com/FypQ1OA3YPYR-8VbFysIRJO1VpQzj-ECFlvCXj_HUZdrJTEl-pY-QWuTlDKpWhHAkcekTn1TykPT74F-uyJvNlXa6tBmAN96MDBMGcl3swtsQmYVJaqC18VaX52EP-taMEtabibI_g=w1920-h1080" alt="img">
+			    <img id="4.6fz" src="https://lh3.googleusercontent.com/5zp4uo0OwV48UDmoJaiTQWrvQ7IF--mj6VB41u85tszFPnqo-yEBFazoG1EtQN1-I_S2Mujgxz28lTC96FKovgnSU-QdSfXRxQ8bwDZ-Wa6wj3rg87fN7ZjsYq3lNJQMdwRHOUoa7w=w1920-h1080" alt="img">
+			    <img id="4.7fz" src="https://lh3.googleusercontent.com/x1VrHZVUZP0-Y4jr_ns35oMb9crs-UB-TqsjLZCF4bPjt9OE-hQicueqrVGsJ1DaIUvlGIFntKruR8eojfiUEI2FdP4xL_BL6Ur61mpvTaGaxodfQbtDw9eChZ_FPQJ-irxmKA-bow=w1920-h1080" alt="img">
+			    <img id="4.8fz" src="https://lh3.googleusercontent.com/ghyg1TXO1L_9tvE7X_RZTeNoQMI3QgH1wBqGhOGE1j8NPG-Pm92dUUAbkNsALZASDZbpDQyqZIfAaSvc6vQrQR_TLMTEX5Vb05jGhMytTZB4oB4CrvnUjeMXf8ykXg8DPrYRaJpZlg=w1920-h1080" alt="img">
+			    <img id="4.9fz" src="https://lh3.googleusercontent.com/8AIDWdPw88850kQdPjNl5s02rm1uvVwnCGA7TYpimungvPjQTJcdpXfSYxJ-yfeIo7YddIJ9qLH6Qv4bizSzg8m942jVs-HLXakm-CUSaTq30-2xE8voSXXX3wzgt2NWFSEdlruttg=w1920-h1080" alt="img">
+			    <img id="4.10fz" src="https://lh3.googleusercontent.com/Oi-tK11mkR6EnpVaoAlf8Y9X7IKgqgVEDG3Kh9E5FGO105tJ6AROtTLW25LhSH8orEMg06nq0PSIKMaRwlpZTnzIHymqQiM3kEufVBFJnPajPyegembc7UufftkQl66mMM7V2qljnQ=w1920-h1080" alt="img">
+		    </div>
+		</div>
+			<div id="fullsizeIMG5"style="display: none">
+			<div class="IMGfz">			   
+			     <img id="5.2fz" src="https://lh3.googleusercontent.com/cjX9b5KjyD_evyRbtN-rCf4JzzGR9s4SsN3gnloPvFNKvOyiGdzVaGa14vywtTORLrGpQEEe3IbepEt33Me2LIRO4vMSv28sF9Y2KC3btnKpvGY6Xhi9B5EUKODiSBbEtH8hJfN53A=w1920-h1080" alt="img">
+			     <img id="5.3fz" src="https://lh3.googleusercontent.com/8HVDhPIstY6liOKEINYsnan8Eo8KkjNz7tZxlzNmLsI35Z28wQaHeMFaF4gal5WVJWpi_AfTWQIIwuHfW9inE7GrKG7lzOg2oyfWVYjGVU1V_NxzyR0KWK8vz5maPmTAcXBVU8xpAg=w1920-h1080" alt="img">
+			     <img id="5.4fz" src="https://lh3.googleusercontent.com/ZaxUvCXMQXzhP1bxQ6-HvmDhnh2DhHXSAwjUBDgJ7vgBUolpdmCg-NJr58y67sfu3wEUe7dm_4PpPKqFfb3gkmeTmmCGl_dee7KLlsYYzfyYnv_Vka4sGchQY11dC6oAYdG0ZNHW9g=w1920-h1080" alt="img">
+			     <img id="5.5fz" src="https://lh3.googleusercontent.com/sDbEH9ghTHFN09rlsQuhnVB9hEMLez9o7IDNPnOsXMqtFcCQek0yl36Pj8fJTgw6Lh4ysn-TLlgBTrbalzJwhRTmCWeAD3tkxa5QRhVieKO2EsMX_yYP59Fw4ZqiS_tnr8CRkmcUaw=w1920-h1080" alt="img">
+			     <img id="5.6fz" src="https://lh3.googleusercontent.com/erbC5zLRiV4k5zl2EIpZ22kPM2l3Bg_V8oce8ng6ESzwHLtQgA_d9AptUqAI_Xpag40QPSaon2sHyVPR1_A_T4eBezGOSpfy3fsUb9h4aRN1duTJZx42NCs4iXcPqaxNT3pCGO6P4g=w1920-h1080" alt="img">
+			     <img id="5.7fz" src="https://lh3.googleusercontent.com/8ozPy4fXrpRRWhO1Y4fEfmnsHKrsg7lBV9zXv-ViPyaoJnSCMrbLqycncPas_s-x1Wyyyq0I7M_dqZMz5NnmFa3BPAN836Z4QsivfhamynsYNk13rVEsBCzl9zj7RsV_eNvooxZ3pQ=w1920-h1080" alt="img">
+			     <img id="5.8fz" src="https://lh3.googleusercontent.com/zzGaHm44Bm0s6vvTAaaVNQL6L7twER1jw3vRl7vxeunOidUonKPhfhKJlhk6zQ127LxTbEDiY_o1X8Nj8GzBiTyKLiGtpDQLtahyod2Lfdq6bXahkoQynDjexBJAERUAUTb443E__A=w1920-h1080" alt="img">
+			     <img id="5.9fz" src="https://lh3.googleusercontent.com/ZtpYalVvL_YRyKQz6NoBjBV4FpASRH0iiZnSbc5JbVrooiZusl9wACWgrmOjuK3KeTKEYSiqDY132cyM3RA7soffD-tolV3aAQiZXicAJeCGAZaDPnydGPnfWiVLse6fCNDQx8-8bA=w1920-h1080" alt="img">
+			     <img id="5.10fz" src="https://lh3.googleusercontent.com/kbBaDNh6z3CN6D0EbMh7OFn9ySqVt7SlR6xDDt-PQqq2pRXUTOQ0-OnuVGeHkERuyTkhDKIP9VDmp34qYPRyV49v9VMSEhlmMW9Sa-giLs3GD6Sd3yBSr7y_OJMX-pQD6YnS_Ohd9w=w1920-h1080" alt="img">
+		    </div>	
+		</div>
+			<div id="fullsizeIMG6"style="display: none">	
+			<div class="IMGfz">		        
+			    <img id="6.2fz" src="https://lh3.googleusercontent.com/BpQ_Bws9yeXYQsg-m6ykB7voVSP1BPC-1p0-XUj5RQ-edg9ntBZVobtMgVvKu-F1GxVoB-f6x0EEGEpwOMNCW8nf4o_ZmYi-CYHyX3fX0iBawOuJKcPu47zzU-wz8apb-WHaxGv2vA=w1920-h1080" alt="img">
+			    <img id="6.3fz" src="https://lh3.googleusercontent.com/-jBTwGM8vxhgwYn4s2XdvhYNgBDRe6-oYMoYQ47G1ad9N9TORf0VyO8U-ZDFs9oSsTiGPOwfe7sNALdMMgWYxLRn2h-NQFUWF8Vg2DoyKfIN5MztE83oqnSMh6_rOv_1jrt7Ozhwng=w1920-h1080" alt="img">
+			    <img id="6.4fz" src="https://lh3.googleusercontent.com/UHosXAXkPvEv2JOtXNVk4sCYCfKar1JdbK7xbkm9Sx0pgodRMf-GaghAN1DnePdyo_PL8PImggRGWc5YkD0gg7GQ_-fA3aMqg76Fa4zkCOmaFA0hpp3uqS2C7ZkdbkObz_7IFl-mWA=w1920-h1080" alt="img">
+			    <img id="6.5fz" src="https://lh3.googleusercontent.com/qNVPOfUuYflqhT7fX30WNijEsm3sPLlr3yOysQQQsm5IFlIGjm8n9NmsgCzj5xn9bXPfyP-zVIkhHpce-nOCyQ2irQAj7vN_QHCIWL8_Gu-zMtZIMoEvItd9_NNkahklzmlg6PZ0gA=w1920-h1080" alt="img">
+			    <img id="6.6fz" src="https://lh3.googleusercontent.com/cTkLxlJyuMbvGz4aPMn_BgeuRUppxbXTxe5EGrlNqavm8Xwy6gqze9EjNlokvnkglv0lPQPNEOY3AXkBYdNcHVLoiwcsD13-pNPqQFZSvLfoYEdYLfWyvPg0s3IdOsRZMdAyTN7Sxg=w1920-h1080" alt="img">
+			    <img id="6.7fz" src="https://lh3.googleusercontent.com/OneEhFLqivpIKyLN1yEImc9sjQ-egDUbBjCfju08O1fOpUyFWDSE3XJG9-n7M3wsVEdYfunkmWzxalDBM71Z6Pea6L3qj35kuHW4PtzpSjC9zSdhiVnmBC_cLVbgyJQv60y5fnv2DQ=w1920-h1080" alt="img">
+			    <img id="6.8fz" src="https://lh3.googleusercontent.com/vfLEoBM7G9TsSEcIIlZ6SU8jOURDsxd3rZH4gdjkrYVwYASW0KlAGI_grzp1BUQL7cGKw3uZAGSObrmwUI-rxauJsBXgDzNBG-LHiLvopSl3WiiEhvhSEO5nq9i1oLeM-Ts3S80s6w=w1920-h1080" alt="img">
+			    <img id="6.9fz" src="https://lh3.googleusercontent.com/pIF2J78FtA0PAx3zi1pPDQZ-yNbxkdvYVbSE5zGJPnwhElnJc1sZ3YlSY9lOdHksX1RyV2LWvrB9HHrTdjV8ye4zkzdT_aOf_PMTHjQXlb7iamsg_vW1Cq1M6xTYX5aZUveSvIo34w=w1920-h1080" alt="img">
+			    <img id="6.10fz" src="https://lh3.googleusercontent.com/zMJEdjEagg1SsD2n9Th3U6mVFs41We549_BtHY-VWc8qXFwX79eERSArT23Z4xVe7_GUhY9_XSKHRZKuTICW-QsKWM9SZaZST2tpNAH_sR09IWHA7wIEarBKeOZFXf1Y-BsPwEF1GA=w1920-h1080" alt="img">
+			   
+		    </div>
+
+		</div>
+			<div id="fullsizeIMG7"style="display: none">	
+			<div class="IMGfz">	        
+			    <img id="7.2fz" src="https://lh3.googleusercontent.com/jR_--VEl2DF7Xt0RjO2waKqXKxOthOTWi_wmFI7mhL4XCXdSKogCOum-0QCwjLUGloSIl1w9wttgFn2zMpcQJJCfrMO9oZPdGjI-RZzUnnUtbbdSzUKnrE-4cNv96-lovcoXTHLutA=w1920-h1080" alt="img">
+			    <img id="7.3fz" src="https://lh3.googleusercontent.com/xPvoDHvuouOUXgFOL0JYsyDJ_0NrmoZ-TRu5UlCvLhqLY5X6PRo4siXWDF-ydlQAjRLv041EqO5f5w9NQ02IchqeIowb4vFuAjsPxmEQX4LNCd3eGb6NmREVOB0W17hH6uziIPQtXQ=w1920-h1080" alt="img">
+			    <img id="7.4fz" src="https://lh3.googleusercontent.com/hXFue8db4n2qjHT1zIjmsGcjUezF6d1L9jXrNqw-zQx20fxnyfadaAhx0NyPtgNleFdS6SgDbH00RXh4gOzvbFAo7SJE9aINm9GK7SWPLvioRGgu8JCCvC15Xqq_-McGwqVjAAJcOA=w1920-h1080" alt="img">
+			    <img id="7.5fz" src="https://lh3.googleusercontent.com/Z0tMArPF597BDUHaahx4Hfd5jGExuk_mPdBTlj0mN8c_GzE5Xa4f51jXijrStg2oo5jg9Ltxoj4AkyVWLCz3TDXFZux-KfYuQ1moGikdhwIIq-ropqRSntg9G1FFrydF0K2_gjX5Qg=w1920-h1080" alt="img">
+			    <img id="7.6fz" src="https://lh3.googleusercontent.com/YqiWvzttG_YwveX0KH740vJJTNlCyoTSq2ovGtvBBsn1ggTQC6MbdSW6sKQC4yogOZUlOqw3oPWd01gzBeqrrqSLzXi5pDvQpTNHi2YuJyUil0MPBwIa8nxABfss3XqF3ZMt2iBPLg=w1920-h1080" alt="img">
+			    <img id="7.7fz" src="https://lh3.googleusercontent.com/hU4AULIn7oItCbFEtX0jQzwkWuR-PtaVSzgkdlJbg7lUslymKZB8VlkrEI5AATmoLGZZ75uB0VVc74p-9rOo8K5vcSuuUCpnyJ6IrGEDz_eZp29tpcaoBqm3Uo0leC2Api9lJa7VLg=w1920-h1080" alt="img">
+			    <img id="7.8fz" src="https://lh3.googleusercontent.com/DVSDySjcsDLmRsdHvVgU8JC_seNRkHLZaRv4LwBnsb9hnDE6YRIXZLDKridMwrf-qLdxqXsol2ZfV2cGpKmvNL9nZXPv1MkrIkrNMGklmYCtdP1f8ws_NO73BujvOmYYTerg84nZQg=w1920-h1080" alt="img">
+			    <img id="7.9fz" src="https://lh3.googleusercontent.com/UObOi1tqjtYL5_OV_mmg_jzQRy3BGYDLrZ-pJwdapZsDy5aRY36vb7aeRgwKibJdLjObh3MxXy93HUVJDMp-2y_c19rmph1VBtjMLsCiq-0l3r5Eg4sOX0VfQLVrI1qvC36x9a6FJA=w1920-h1080" alt="img">
+			    <img id="7.10fz" src="https://lh3.googleusercontent.com/0rHN_G9I60mGvcITkKiJu6OiIuBs5Z7ZDJPQYf2WuMRL_24ep0XYhVKOzfo_eJBICk_eUtOjX_FSKMDaxvchmhRlbt9BsStqjmOWqGf1VayIDbJ4hG7qLUsYp3E72bs1p6zQ48UH6Q=w1920-h1080" alt="img">
+		    </div>
+
+		</div>
+			<div id="fullsizeIMG8"style="display: none">
+				<div class="IMGfz">
+			    <img id="8.2fz" src="https://lh3.googleusercontent.com/ad4BY3S0OkqGG6-JBjR87Swk-yWOOiUBc1aSysKEgK1pRY447FhXUl8YTtRUm3cLvXa1x8sdm4anfYSQAREmzrMynUfUZ8OCkfax1cmGhUBjWQkwxB_n0O2jfk0htY5cSyZ8hKHjQQ=w1920-h1080" alt="img">
+			    <img id="8.3fz" src="https://lh3.googleusercontent.com/zrYbbOJ59pjg9BVmnn-0p97NL4ejcWIqcg373ai0lC9SqfCpk9CAOy9ED0q884J7gXkrJ-6IWGTIBLh1LZlB3QmN_jcbfCxwoy-k_HDZdQ9EoD5dIBfoDTu8KfKZ2-U4rI4U6PJ_kQ=w1920-h1080" alt="img">
+			    <img id="8.4fz" src="https://lh3.googleusercontent.com/8QzYZRnsyVqZ8xj5cGuEsiNHOxJ0Im44lfwNwWhLPtWGZybRQXTi4qaAuoCFaYAkfRnW5rP6bsrO5PVzUKz7CR07qcxpfqTfKD1q6qZghNagp0KLpBD1zlyUYr1Vh4BVEYFmVfSHCg=w1920-h1080" alt="img">
+			    <img id="8.5fz" src="https://lh3.googleusercontent.com/IpE4bvBYWF8KD_tznGKB7MvtqBw982jwqsCTteUeOkadSIjv8gyzrQNHK23Ks3yQGmW_m7DpmHEOnHnX3nykvH_xO_6sfG64YXEYomzKxMlBTK5mADrPhkc-r9LxC1OZpSpKTAAb-w=w1920-h1080" alt="img">			    
+		    </div>
+		</div>
+			<div id="fullsizeIMG9"style="display: none">
+				<div class="IMGfz">
+			    <img id="9.2fz" src="https://lh3.googleusercontent.com/2DXAtrLJ8nWNzG5wo4vQnixZoa-dtA5i93_jYVD-_J_-r4eGcadOOOQOKsGvVEIh6Ol_rA9KAO3soByz-On7IHjFzCpgIzhxdI06CGAJI2I0Km4DJ51b--DGWi1R0zHI_9AwR43jFQ=w1920-h1080" alt="img">
+			    <img id="9.3fz" src="https://lh3.googleusercontent.com/q7E5ZdT-G6wqVir43lziCHxhNWUKqw53gC1eGTUdjKC9Qf_em-SISo-iEeI3UXLgE5jl6wQSP8nteq1H05oIM_CvrzaZPzkH8IBjzxY2R8jkDQxPTIMg2nmv-u7ATQALrjgXH3W73w=w1920-h1080" alt="img">
+			    <img id="9.4fz" src="https://lh3.googleusercontent.com/t4WGtip-XQms_E4DVIFMRiLE8Sgmme0dMY8_RenKsjlXlBHAyl0Sbrbgc93BCaAwpnG5qcFOCbzmG5YJPpsheOK7Y1u-Cnjk_81dz8m3ppk0XLspNQSY0AGZ2BIseQWAKjQ3gDPbwg=w1920-h1080" alt="img">
+			     <img id="9.5fz" src="https://lh3.googleusercontent.com/xRroB1QBVPb-HKiJKCG6VrfclGbt6NSJwv54GQZY0kbGUayA5jHBWg9v2mhN4WMGie5LxSBLgqHYcX0ao2B4u6zR8eNxNmebi2szLQzL9sABJmg62-VFN20rbiDzPbH_UwngaUxS1A=w1920-h1080" alt="img">
+			    <img id="9.6fz" src="https://lh3.googleusercontent.com/wvYBCt8LhNs7kL8-yBVcBXO5qwcXTrc0-ue8a_mdhjail6BoSsKj6_OykbxTpljovUL7tDQZcc6FKyTz9bRENMvR-zrvNIAMj3GiM6EikCbuzvTSVIWnLQP7oEaruk201pFMNyQ3jg=w1920-h1080" alt="img">
+			    <img id="9.7fz" src="https://lh3.googleusercontent.com/BT-yqyOyAatcRXyheoqH6wlN3qE5nWwe6dFZzlAarZzu9u6rqUnEVyO_rGM3sEnczVI-fSJVK93ubuUvz6PF7GAsNpKe35tbWflSoD1sZ-6y-5s0EUDgJUF4D0ZecU8dxBiSrLRXQA=w1920-h1080" alt="img">
+			     <img id="9.8fz" src="https://lh3.googleusercontent.com/DA5BvTxuRKYZMAsd3LOUYf0wdKoSZxyACvAptEqyZScpywYXEOF9PRkOJXGk3FB0Vu3fTDMTDg28PNkRGUjuZXPCHzN8mpP3YrDK-wbKPvh_y2Lad97EQ5rTURzLNWNrpAx_LM9kIA=w1920-h1080" alt="img">
+			    <img id="9.9fz" src="https://lh3.googleusercontent.com/TUxKkXfexwJ17fxUX15uHUy8fyZdC0GzHDeaTlzl--L8a7hiHHDujs9tF0xOlCzbIUpmsLURGs51UgIbjBQipEuKnaeHjsRZztGenX44Fqn6zFz8e4MGddgoJRcQpBq37y3Es9UErQ=w1920-h1080" alt="img">
+			    <img id="9.10fz" src="https://lh3.googleusercontent.com/cC-HWnuuF-ltR4hCEMfzq0M26jpGOocmlSuUj7WoYbJghNEIJPVzWyBXOf9CO4XOkV2_IjqBz1GQbdvlrAJ2vd_5AqP0V7efoS8L3xtziGC5TKZyKO0RVUrv_jMAzuJ4j-OboZwKJQ=w1920-h1080" alt="img">			    
+			    
+		    </div>
+		</div>
+			<div id="fullsizeIMG10"style="display: none">
+				<div class="IMGfz">
+			    <img id="10.2fz" src="https://lh3.googleusercontent.com/VTMf0BeNw4oOPrPRRCumasRP1QT0SnYtu8m4-_bCDXQftEsG3-PXAvfNOZI3nBa61yD2QTJOGD6oNflDr-mkqMiBfEz7-grs8B8_13trMpdZ7y46-RJCWZ8MFpxgKzFa4nbM6KEWrg=w1920-h1080" alt="img">
+			    <img id="10.3fz" src="https://lh3.googleusercontent.com/nz_9EXeqhaGUt0GCA0RQ001sZJmxl9-19XXedCPeVJ772xkFNiMZlsKU2fuT0aIILkoJdRky9gKfPFYzfeu6DAXoYSNN9IEPACcquMxNwdRfe6hUzb-KV6FepLFdHK49jh0RmXQGeQ=w1920-h1080" alt="img">
+			    <img id="10.4fz" src="https://lh3.googleusercontent.com/8jAafhpD30TMDJKcUaUvR8TtyQQxOedFT-uvaYnsiJEjblFA7noKvrPor0zfOKYcrtFdoRGkmnO82Espwh4sZtC7eMg3sFjFg3NM7icyO6_C3Ahrv1RoXQyl-j5l1We9sQEdWBrcuA=w1920-h1080" alt="img">
+			    <img id="10.5fz" src="https://lh3.googleusercontent.com/w9z8S-msUvCYZO41-BgGq2CxQyZy1PJ-swRGhAN65ed3-P7E3JP_Z7lcvyNlRBwkT_3g-Y4BWoDckwVVYaukfR-mfM_El77xD1Alw-37xy-XYc2WK0SDgoUVjs_T-of7EwwCFvxtWw=w1920-h1080" alt="img">
+			    <img id="10.6fz" src="https://lh3.googleusercontent.com/K88lVqKYZ_S7JznkBNylOhPhSejnyoPZIx3a45DQUPJJniYtb6hjoljhAcE2FKVzCN7sTk6-wkTGlohgC-aIVB8Fi3yJ976z48-VrJCjLpnodca29ogap17_3rt9zkgmF8Zz9mWaeA=w1920-h1080" alt="img">
+		    </div>
+		</div>
+			<div id="fullsizeIMG11"style="display: none">
+				<div class="IMGfz">
+			    <img id="11.2fz" src="https://lh3.googleusercontent.com/gQ0PRg0jcbWBnw09alDtv-Wo6_rWA8QEty7e92jnsYbLVd6cFWvPW4Ck9T_s2yIWqyKiRiVj87EIBDEkwpdM-dpUXfeLkkZcCZ02wP15y7Je2_9sq8Vkbk-yshu-CVz8wbNbB7-svA=w1920-h1080" alt="img">
+			    <img id="11.3fz" src="https://lh3.googleusercontent.com/v85MhhNi773goSUZU0zKWIjklqeJs5_mXTXUDG6NkzpubRyXNKj8tIoCTBwbBrsAyaPJFXL09HMk7f-pNcRSPqn226L1X0KRRJMAdTmoYih6E2GkJivrBjvS0GZLzR0VU1fg7PKfsw=w1920-h1080" alt="img">
+			    <img id="11.4fz" src="https://lh3.googleusercontent.com/17OckGXCd1eGrTgS3RdmJrzP_CEc4BPdCIRsbc3GTTgF6itboMeIJrJJsT6TIQxc9FzLBuyczViYN53BdPwQJJ6QG8Lk1uh7Ihfe3Jwd4-R8KQgQlKMVmBRjOpr0jPQG-9kByMT2qw=w1920-h1080" alt="img">
+			    <img id="11.5fz" src="https://lh3.googleusercontent.com/TvBywEyvxggM4ww8l_XGfgWwTj4Q2hSE-Tmm-nvEjvNOeXSOZGArCJTRV3yU1-17i6lokrz6H0H4w4SNUBSrVOV7ucCXBdnRvuHTN0lZGk4XkhQbrEa0rrXsfOoId5qo7R4a4Wj-3g=w1920-h1080" alt="img">
+			    <img id="11.6fz" src="https://lh3.googleusercontent.com/By_9Lw79D2V-3JVutoDH_k_xCW5d0d9HLZkaMOKQGgzuTUiSSSPhwxq8DjChReVhy15bNYF4e0CkMyfhoNgbkZ4J24-imYiWr4xDppljedFGhDMPR59ek9iTbUxV6EQ0nNX9QWNRMQ=w1920-h1080" alt="img">
+			    <img id="11.7fz" src="https://lh3.googleusercontent.com/o8PpkgQnpEl3XVZgoMeLJPbA3EruCZ6rNljav8oeEHFVFf-7hesbDjbb2lgoTLLD8j7JNZomK9SYq2ObZ0KvtKmH58mETBLub5GFJr7zmDG6GUMwCrCWdHpFAnY3Z93NK0Tjp0306A=w1920-h1080" alt="img">
+		    </div>
+		</div>
+			<div id="fullsizeIMG12" style="display: none">
+				<div class="IMGfz">
+			    <img id="12.2fz" src="https://lh3.googleusercontent.com/5U4oKlLCJo7N8Xeg05Pz3xKaSidRRpfSZh3Lxfrs4RU716TXo88EvA6nKV90BYODbVN60PAwJXCTchrfpKyqGfiHCUbXAJh-5PVhwhIAUuK62vbsaN-5k7jAsfUSCH5J9MeGt1QsIg=w1920-h1080" alt="img">   
+			    <img id="12.7fz" src="https://lh3.googleusercontent.com/bJhpiu35JQasW4WJ1RTPrwGNcpMpyRKfhycTVhgQXJbPTSxCdcJwUmUMpn_kh2dTFOS3kU2akxkaHpoJyq20J7P14FuppQfdfMmRwfy3ALmegiK2cTdbqbCFyVAPKsvoPZEEeUaJRw=w1920-h1080" alt="img">
+			    <img id="12.3fz" src="https://lh3.googleusercontent.com/N-028j_1e5QoCD5c99vFIoFDsuzG7oUEQz-Ogp0ZTZLgt3-SQyvYxMhGQllWeOA2sYSLqUPCbC9AzBuGdPdRfW--YJm2JW-UXcqMWJMfIwoyI9VbnjELCwhQecn_IwDPM3O6On_xsw=w1920-h1080" alt="img">
+			    <img id="12.4fz" src="https://lh3.googleusercontent.com/OiEjOQqPUBI3KUXMXNpabisxmHbZbLdlIwrOwVFdhr5HADanRGDoMrTBMTWN1UQhx_2LQk3RIVvqSPqqvnDWS_R2vd8bwt8b835z3xFZNMxExN_RyscFzlkpaJCAmjzGKXJOmUgHdQ=w1920-h1080" alt="img">
+			    <img id="12.5fz" src="https://lh3.googleusercontent.com/cR63iKZZ9VTx1CrOdm-YnJFM6jaMh5j0emwjuqdxx60nvTIamrGQTycRpKTx7BNl9bvLNBrqVRFneC2L9XJkWHkFJGPIC7OmQkW9qznaRyLARKtRRGPScKrFyUlC_5DhngXrW4Vx-g=w1920-h1080" alt="img">
+			    <img id="12.6fz" src="https://lh3.googleusercontent.com/cLuqG6DBDDigIOK9PSPtvnnzGPbSRp0iLeDIQevEKqC7s1APgCy4y0DQNGzpMe7TRfsOXz__6q2UL1LYWeJRxJWDP0c3DEtK4OFNMsWBF_rmRcMyn61Jo1TPggpMSf_Aax5aniJIfQ=w1920-h1080" alt="img">
+			    
+		    </div>
+</div>
+            <div id="fullsizeIMG13" style="display: none">
+				<div class="IMGfz">
+			    <img id="13.2fz" src="https://lh3.googleusercontent.com/ANFxDsLOea6vVenTCFAEF1n5umWoCGNULcNxpc1YrK67b7Stzr_1LoG-sBcb3JJf8BB3w4mNjXeAMuk56nmA5lwJIKL_4ktSA_SA0DSG7yx2gX-SfgaYazoiO674VFGj4uY3M8Y8yw=w1920-h1080" alt="img">   
+			    <img id="13.3fz" src="https://lh3.googleusercontent.com/JaMauVQEK7lthgH1c1NRO3ReNpdAnovuIl2kh3UpAHMaJmdd-rFf7eGGCXZ2cvfJeT7Md_g5W7nVxnt1bIVvyQIvdkmQbeF8YgC9u_NcKPhcDSQbjgw0eqFH9KQ3iwlM8XxLg9mo3g=w1920-h1080" alt="img">
+			    <img id="13.4fz" src="https://lh3.googleusercontent.com/DWoxbCQxircnomVw9st3D0ePosNdmxXwqenRHt1Cee2PvVCfwVp3qWK9foQXqMvOLQD5OS9hMlZ5spjhl594Eaxr1VUUgQZxZrxe74c_POiVL_GHNZM8oonWwfHUGCgWQso0YUSW_A=w1920-h1080" alt="img">
+			    
+			    
+		    </div>
+</div>        
+             <div id="fullsizeIMG14" style="display: none">
+				<div class="IMGfz">
+			    <img id="14.2fz" src="https://lh3.googleusercontent.com/9mfdkeZRLmu_D0eXsY04t_DzHPZqcHyKaxqHcTTCcDHSFMS7i5JJ4eCkZyM80Rq8O2GD6XsXg4Fp0Zy1eN0YJgdWXoqef9UQf2FWP00cdLeRUMLxCFIxZdBoI8weuBDZVNoxj2czhg=w1920-h1080" alt="img">   
+			    <img id="14.3fz" src="https://lh3.googleusercontent.com/xBSW1DOjWJG-Rj1XN9VsJnS-lhuz11SujJxF_bNAxWRROCu9skiBrNNoiEZIkId0LLtu_C1dKzyrQIN4vf-DSD47opHkq_lRUffNEQ7cu-_RBYucg1GkzW7HvbeSLbcIJDhZP78xlA=w1920-h1080" alt="img">
+			    <img id="14.4fz" src="https://lh3.googleusercontent.com/L2uqWBEvlHWazOKUYbOqLWVuP-GJ53XPARdT45FlfCA7KZU1cNCstrgPTBKvNSxMH6MV-GkSP-D9V_AwfqkNy5y7q85n8AE6jaiAAxsNLs5wOVt_RMQ7nSVon_zd4D4Zu9FVWyTEHg=w1920-h1080" alt="img">
+			    <img id="14.5fz" src="https://lh3.googleusercontent.com/IOeOUo6VOdRXTBv10fEWMbjBbqaG_fTHVjMLQiI3Lkb06dprCuxG3vpUSl82UqZTy7cmRrMTsKi9PneUatlVwHNiccBYYJ7XVd6voXcGeYxURNN_j6oQJx5v79y9fcMvLDrPgCpQUw=w1920-h1080" alt="img">   
+			    <img id="14.6fz" src="https://lh3.googleusercontent.com/z0LKBxBZfPbSQbSUdN1IuLx3qTXpamoyV7Gpu_HGeQYdge7HizGZt6CmpvPtldPOSkadzTx0lB1CocN_t53-R9xp6RTAn7XctN80xEXSyUJdLxKevkOWT22b_k9Y_Shvcw7UPB-zDg=w1920-h1080" alt="img">
+			    <img id="14.7fz" src="https://lh3.googleusercontent.com/atmpCRP3SrNpipp_cP1JimOUKhCNYeC3r6aGOOR-PYB57xkoLJFUFUewdPKbio5wWil5TXRGhKjJQ-tvUlhwrr9o1NL74AU0QjbuPvdo9hbIF-lmykxGqEqKjrz0QS0p4h2dhxM52g=w1920-h1080" alt="img">
+			    <img id="14.8fz" src="https://lh3.googleusercontent.com/UHYaQbW3g1_TeABeoFncQ0A07SlpXAMw094XDh4XR1aq52UiqQjO0AgD_jYLFnIZ_Ya_4GXxc07s9Hy4bMWKR6k9Jd60mx_S1dzLrkQvYHuRsR-crj2uJGAhULIiUI0u0pBeMdXPUQ=w1920-h1080" alt="img">   
+			    <img id="14.9fz" src="https://lh3.googleusercontent.com/RZLbtfFl1uK9nT-nJvChDHPzOrmbuZ0lSvoRzjoHX6iGjqB_URdrBpgH1kJx_qYE92oBsCKRHtpTzLXCu1-f3rcCEyYu5AZij0VlPjznhW54i7z9Ck8jqPA4avnSjNh10AuoreZP2g=w1920-h1080" alt="img">	    			    
+		    </div>
+</div>
+            <div id="fullsizeIMG15" style="display: none">
+				<div class="IMGfz">
+			    <img id="15.2fz" src="https://lh3.googleusercontent.com/UYTCVXQwc61QBS-CrlPoqeZVCtPQSCuPAza002ULDmkapjl_J_WeqDTLyR3jAnlxa5kYRoaH45-p8Y81mCPqS8ppO5uLR18fxtw0DmE2ynd4cM3Qz1uCkFf0p0C9ILt0BMwO54qYRQ=w1920-h1080" alt="img">   
+			    <img id="15.3fz" src="https://lh3.googleusercontent.com/yqinG_HGxQi8MOAL6xO0Zr67rIc0K6xfICYAEan-BTPe0viJqwn62u9O-4zE1s9rJj_7FTYSVCFpZpqQIkop_kWdy4NvLf6jKo2fEIXeGW1NhNxP72Dxe2ETbes0TbcU48GX4H-X4w=w1920-h1080" alt="img">
+			    <img id="15.4fz" src="https://lh3.googleusercontent.com/rVgH6ivLQ5fZEWWWEg1A0Vks_WWKX_5qJgba57anrIwBxxRIdaFRUNhA_ntbXaVmPX75DOGXMbl_E96ZkXCHG0K8sqaeePcBaje6b5KOi7QH2ZgXTbAN63EM0MsUXEaKVPg9rHBftA=w1920-h1080" alt="img">
+			    <img id="15.5fz" src="https://lh3.googleusercontent.com/KDdDWVjbqjQzvx7UuDORpn2G594LP1K65iG-BQywWbpTsVs3DFk9CETDJFuGJLX9A6OrH9smgTHTPx89pboYcq7m93kwTWrAYYQM6V5qD6n8Cf92Oy7yYDsYLnW4VKQFuRjBORuNGg=w1920-h1080" alt="img">
+			    <img id="15.6fz" src="https://lh3.googleusercontent.com/KvJI2tCnPF3vR89ArwYkWNanb8bEkK3HN3BsVt5pg1rJLy9-oVvz7lflckq38Aav9mfzZZSG5b2IP3ejm8REJr1yZtmJ2FA_4tIXAphZXh-aGuZP4Pbu-H-noUu2FtK23l0kIR4_IQ=w1920-h1080" alt="img">		    
+		    </div>
+</div>
+	</div>
+</div>
+        <i id="nextbutton"class="fas fa-arrow-circle-right" style="position: fixed; right: 2%; top: 50%; display: none;opacity: 0.4; font-size: 300%;"></i>
+        <i id="prevbutton" style="position: fixed; left: 2%; top: 50%; display: none;opacity: 0.4; font-size: 300%;"class="fas fa-arrow-circle-left"></i>
+        <div id="nextIMG" onclick=nextIMG() onmouseover=rotate('nextbutton') onmouseout=unRotate('nextbutton') style="width: 48vw;height: 90vh;right: 0px; bottom: 0px; background: #000000; opacity: 0.0; position: fixed; display: none;"></div>
+         <div id="prevIMG" onclick=prevIMG() onmouseover=rotate('prevbutton') onmouseout=unRotate('prevbutton') style="width: 48vw;height: 90vh;left: 0px; bottom: 0px; background: #000000; opacity: 0.0; position: fixed; display: none;"></div>      
+        <i id="closeIMG" onclick=closeFSIMG() style="position: fixed; right: 2%;top: 6%; display: none;opacity: 0.4;font-size: 300%;" class="fas fa-times-circle"></i>
+        <nav class="navBar">
+           <div id="bar">
+	          <ul>
+		<li><a id="visited" href="home.html"><h1>Home</h1></a></li>
+		<li><a href="white.html"><h1>White Flowers</h1></a></li>
+		<li><a href="yellow.html"><h1>Yellow Flowers</h1></a></li>
+		<li><a href="red.html"><h1>Red Flowers</h1></a></li>
+		<li><a href="blue.html"><h1>Blue Flowers</h1></a></li>
+		<li><a href="purple.html"><h1>Purple Flowers</h1></a></li>
+	          </ul>
+            </div>    
+         </nav>
+         
+
+         <nav>
+        	<div id="barIcon">
+        		<ul>
+        			<li id="test"><i id="buttonCtrl" class="fas fa-bars" onclick=menuCtrl()></i></li>
+        			<li><i class="fab fa-facebook-square" onclick=FB()></i></li>
+        			<li><i class="fas fa-envelope" onclick=gmail()></i></li>
+        			<li><i class="fas fa-phone-square" onclick=phoneNumber()></i></li>
+        		</ul>
+        	</div>
+        </nav>
+    <nav class="navBarFixed">
+    	  <div id="barFixed">
+	<ul>
+		<li><a id="visited" href="home.html"><h1>Home</h1></a></li>
+		<li><a href="white.html"><h1>White Flowers</h1></a></li>
+		<li><a href="yellow.html"><h1>Yellow Flowers</h1></a></li>
+		<li><a href="red.html"><h1>Red Flowers</h1></a></li>
+		<li><a href="blue.html"><h1>Blue Flowers</h1></a></li>
+		<li><a href="purple.html"><h1>Purple Flowers</h1></a></li>
+	</ul>
+</div>
+    </nav>
+</body>
+
+  
